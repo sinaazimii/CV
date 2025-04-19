@@ -1,6 +1,7 @@
 import Section from "./SectionWrapper";
 import { motion } from "framer-motion";
 import SkillGroup from "./micros/skillGroup";
+import { useState, useEffect } from "react";
 
 const languages = ["JavaScript", "Python", "Java", "HTML", "CSS"];
 
@@ -15,72 +16,136 @@ const softSkills = [
   "Problem-solving",
 ];
 
-const Skills = () => (
-  <Section id="skills" bgColor="#f6f6f6" height={"100vh"}>
-    <div>
-      <div style={styles.container}>
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
-          style={styles.rowOne}
-        >
-          <p style={styles.explain}>
-            I bring a solid foundation built through a strong academic
-            background, hands-on projects, and professional work experience. I'm
-            passionate about solving complex challenges and take pride in
-            developing responsive, intuitive, and user-centered applications
-            that deliver real value.
-          </p>
-        </motion.div>
-      </div>
-
-      <div style={styles.rowTwo}>
-        <div style={styles.titleContainer}>
-          <motion.h2
+const Skills = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // 768px is typical for mobile breakpoint
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return (
+    <Section id="skills" bgColor="#f6f6f6" height={"100vh"}>
+      <div>
+        <div style={styles.container}>
+          <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.3 }}
-            style={styles.title}
+            style={{
+              ...styles.rowOne,
+              marginBottom: isMobile ? "-30px" : "100px",
+            }}
           >
-            Skills
-          </motion.h2>
+            <p
+              style={{
+                ...styles.explain,
+                fontSize: isMobile ? "14px" : "30px",
+              }}
+            >
+              I bring a solid foundation built through a strong academic
+              background, hands-on projects, and professional work experience.
+              I'm passionate about solving complex challenges and take pride in
+              developing responsive, intuitive, and user-centered applications
+              that deliver real value.
+            </p>
+          </motion.div>
         </div>
 
-        <div style={styles.skillContainer}>
-          <div style={styles.skillBoxContainer}>
-
-            <SkillGroup
-              title="Languages"
-              icon="/code.svg"
-              skillList={languages}
-            />
-            <SkillGroup
-              title="Tools"
-              icon="/gear.svg"
-              skillList={tools}
-            />
+        {isMobile && (
+          <div>
+            <motion.h2
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: false, amount: 0.3 }}
+              style={{
+                ...styles.title,
+                fontSize: "25px",
+                marginTop: "20px",
+                textAlign: "center",
+              }}
+            >
+              Skills
+            </motion.h2>
           </div>
-          <div style={styles.skillBoxContainer}>
+        )}
+
+        <div style={styles.rowTwo}>
+          {!isMobile && (
+            <div style={styles.titleContainer}>
+              <motion.h2
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: false, amount: 0.3 }}
+                style={styles.title}
+              >
+                Skills
+              </motion.h2>
+            </div>
+          )}
+          {!isMobile ? (
+            <div style={styles.skillContainer}>
+              <div style={styles.skillBoxContainer}>
+                <SkillGroup
+                  title="Languages"
+                  icon="/code.svg"
+                  skillList={languages}
+                />
+                <SkillGroup title="Tools" icon="/gear.svg" skillList={tools} />
+              </div>
+              <div style={styles.skillBoxContainer}>
+                <SkillGroup
+                  title="Frameworks"
+                  icon="/framework.svg"
+                  skillList={frameworks}
+                />
+                <SkillGroup
+                  title="Soft Skills"
+                  icon="/people.svg"
+                  skillList={softSkills}
+                />
+              </div>
+            </div>
+          ) : (
+            <div
+              style={{ display: "flex", flexDirection: "column" }}
+            >
+              <SkillGroup
+                title="Languages"
+                icon="/code.svg"
+                skillList={languages}
+                isMobile={isMobile}
+              />
+              <SkillGroup
+                title="Tools"
+                icon="/gear.svg"
+                skillList={tools}
+                isMobile={isMobile}
+              />
               <SkillGroup
                 title="Frameworks"
                 icon="/framework.svg"
                 skillList={frameworks}
+                isMobile={isMobile}
               />
               <SkillGroup
                 title="Soft Skills"
                 icon="/people.svg"
                 skillList={softSkills}
+                isMobile={isMobile}
               />
-
-          </div>
+            </div>
+          )}
         </div>
       </div>
-    </div>
-  </Section>
-);
+    </Section>
+  );
+};
 
 export default Skills;
 

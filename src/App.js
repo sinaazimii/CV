@@ -6,11 +6,22 @@ import Skills from "./components/Skills";
 import Languages from "./components/Languages";
 import ScrollNav from "./components/ScrollNavigation";
 import WorkExperience from "./components/WorkExperience";
+import { useEffect, useState } from "react";
 
 function App() {
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 768); 
+      };
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
   return (
     <main className="font-sans" style={{ backgroundColor: "#f6f6f6" }}>
-      <ScrollNav />
+      
+      {!isMobile && (<ScrollNav />)}
       <div id="hero" className="section">
         <Hero />
       </div>

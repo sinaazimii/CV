@@ -1,52 +1,62 @@
 import Section from "./SectionWrapper";
 import { motion } from "framer-motion";
 import LanguageProgress from "./LanguageProgress";
+import React, { useState, useEffect } from "react";
 
-const Languages = () => (
+const Languages = () => {
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 768);  // 768px is typical for mobile breakpoint
+      };
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+  return(
   <Section id="languages" bgColor="#f6f6f6">
-    <div style={styles.container}>
+    <div style={{...styles.container, flexDirection: isMobile ? "column" : "row"}}>
       <div style={styles.columnOne}>
-        <motion.h2
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
-          style={styles.title}
-        >
-          Languages
-        </motion.h2>
+          <motion.h2
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}
+            style={{...styles.title, fontSize: isMobile ? "25px" : "60px", textAlign: "center", marginTop: isMobile? "20px" : "35px"}}
+          >
+            Languages
+          </motion.h2>
       </div>
 
       <div style={styles.columnTwo}>
         <motion.div
-          style={styles.sampleBox}
+          style={{...styles.sampleBox, width: isMobile ? "350px" : "800px"}}
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: false }}
         >
-          <p style={styles.languageTitle}>
+          <p style={{...styles.languageTitle, fontSize: isMobile ? "16px" : "20px"}}>
             English: C1 (IELTS Overall Band Score)
           </p>
-          <LanguageProgress label="English: C1" target={90} />
-          <p style={styles.languageTitle}>German: A2</p>
-          <LanguageProgress label="German: A2" target={30} />
-          <p style={styles.languageTitle}>Persian: Native</p>
-          <LanguageProgress label="Persian: Native" target={100} />
+          <LanguageProgress label="English: C1" target={90} isMobile={isMobile}/>
+          <p style={{...styles.languageTitle, fontSize: isMobile ? "16px" : "20px"}}>German: A2</p>
+          <LanguageProgress label="German: A2" target={30} isMobile={isMobile}/>
+          <p style={{...styles.languageTitle, fontSize: isMobile ? "16px" : "20px"}}>Persian: Native</p>
+          <LanguageProgress label="Persian: Native" target={100} isMobile={isMobile}/>
         </motion.div>
       </div>
     </div>
   </Section>
-);
-
+  );
+}
 export default Languages;
 
 const styles = {
   container: {
     display: "flex",
-    flexDirection: "row",
     justifyContent: "center",
-    alignItems: "start",
+    alignItems: "center",
     color: "#f6f6f6",
     // height: "35vh",
     textAlign: "center",
@@ -55,9 +65,9 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     flex: 1 / 5,
-    alignItems: "flex-start",
+    alignItems: "center",
     justifyContent: "center",
-    margin: "50px",
+    marginTop: "10px",
   },
   columnTwo: {
     display: "flex",
@@ -76,8 +86,6 @@ const styles = {
   },
 
   sampleBox: {
-    // height: "170px",
-    width: "800px",
     backgroundColor: "white",
     borderRadius: "12px",
     padding: "5px 10px",
@@ -92,7 +100,6 @@ const styles = {
   },
 
   languageTitle: {
-    fontSize: "20px",
     fontWeight: "bold",
     color: "black",
     marginLeft: "10px",

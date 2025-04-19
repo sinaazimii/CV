@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import SvgIcon from "./Icon";
 
-const SkillGroup = ({ title, icon, skillList }) => {
+const SkillGroup = ({ title, icon, skillList, isMobile }) => {
   return (
     <motion.div
-    style={styles.skillBox}
-    initial={{ opacity: 0, x: 100 }}
+    style={{...styles.skillBox, height: isMobile ? "auto" : "150px", width: isMobile ? "90vw" : "500px"}}
+    initial={{ opacity: 0, x: 200 }}
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
     viewport={{ once: false, amount: 0.3 }}
@@ -16,7 +16,7 @@ const SkillGroup = ({ title, icon, skillList }) => {
     </div>
     <div style={styles.skillsList}>
       {skillList.map((tool) => (
-        <p key={tool} style={{ margin: "10px" }}>
+        <p key={tool} style={{ margin: "10px", fontSize: "auto" }}>
           {tool}
         </p>
       ))}
@@ -58,5 +58,7 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     marginTop: "10px",
+    overflowX: "auto",
+    whiteSpace: "nowrap",
   },
 };
