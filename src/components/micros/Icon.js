@@ -1,4 +1,4 @@
-const SvgIcon = ({ svgPath }) => {
+const SvgIcon = ({ svgPath, iconSize, containerSize }) => {
   return (
     <div
       style={{
@@ -8,16 +8,16 @@ const SvgIcon = ({ svgPath }) => {
         backgroundColor: "#eff0f4",
         borderRadius: "50%",
         padding: "10px",
-        width: "40px",
-        height: "40px",
+        width: containerSize || "40px",
+        height: containerSize || "40px",
       }}
     >
       <img
         src={svgPath}
         alt="Icon"
         style={{
-          width: "24px",
-          height: "24px",
+          width: iconSize || "24px",
+          height: iconSize || "24px",
           margin: "10px",
         }}
       />

@@ -9,7 +9,7 @@ import WorkExperience from "./components/WorkExperience";
 
 function App() {
   return (
-    <main className="font-sans">
+    <main className="font-sans" style={{ backgroundColor: "#f6f6f6" }}>
       <ScrollNav />
       <div id="hero" className="section">
         <Hero />

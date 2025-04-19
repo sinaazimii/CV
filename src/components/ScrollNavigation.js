@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const sections = [
   { id: "hero", label: "Introduction" },
   { id: "skills", label: "Skills" },
-{ id: "work-experience", label: "Work Experience" },
+  { id: "work-experience", label: "Work Experience" },
   { id: "work-samples", label: "Work Samples" },
   { id: "education", label: "Education" },
 ];
@@ -13,8 +13,8 @@ const ScrollNav = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActive(entry.target.id);
           }
@@ -23,7 +23,7 @@ const ScrollNav = () => {
       { threshold: 0.6 }
     );
 
-    sections.forEach(section => {
+    sections.forEach((section) => {
       const el = document.getElementById(section.id);
       if (el) observer.observe(el);
     });
@@ -31,7 +31,7 @@ const ScrollNav = () => {
     return () => observer.disconnect();
   }, []);
 
-  const scrollTo = id => {
+  const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
@@ -40,7 +40,7 @@ const ScrollNav = () => {
 
   return (
     <div style={styles.navContainer}>
-      {sections.map(sec => (
+      {sections.map((sec) => (
         <div
           key={sec.id}
           onClick={() => scrollTo(sec.id)}

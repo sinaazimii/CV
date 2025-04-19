@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import SvgIcon from "./../Icon";
+import SvgIcon from "./Icon";
 
 const SkillGroup = ({ title, icon, skillList }) => {
   return (

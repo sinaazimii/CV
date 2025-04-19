@@ -4,7 +4,7 @@ const WorkItem = ({ title, place, period, logo, link, techs }) => {
   return (
     <motion.div
       style={styles.sampleBox}
-      initial={{ opacity: 0, scale: 0.8 }}
+      initial={{ opacity: 0, scale: 0.7 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: false }}
