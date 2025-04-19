@@ -22,7 +22,7 @@ const Hero = () => (
         <p style={styles.subtitle}>
           I Recently graduated master student in Computer Science from a top
           university and ready to dedicate my full time focus to frontend
-          development
+          development.
         </p>
       </div>
       <div style={styles.columnTwo}>

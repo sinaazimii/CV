@@ -1,46 +1,56 @@
 import Section from "./SectionWrapper";
 import { motion } from "framer-motion";
-import LanguageProgress from "./LanguageProgress";
 
-const Languages = () => (
-  <Section id="languages" bgColor="#f6f6f6">
+const WorkSamples = () => (
+  <Section id="work" bgColor="#f6f6f6" height={"100vh"}>
     <div style={styles.container}>
       <div style={styles.columnOne}>
         <motion.h2
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: false, amount: 0.3 }}
           style={styles.title}
         >
-          Languages
+          Work Samples
         </motion.h2>
       </div>
 
       <div style={styles.columnTwo}>
         <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
           style={styles.sampleBox}
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: false }}
         >
-          <p style={styles.languageTitle}>
-            English: C1 (IELTS Overall Band Score)
-          </p>
-          <LanguageProgress label="English: C1" target={90} />
-          <p style={styles.languageTitle}>German: A2</p>
-          <LanguageProgress label="German: A2" target={30} />
-          <p style={styles.languageTitle}>Persian: Native</p>
-          <LanguageProgress label="Persian: Native" target={100} />
+          <img
+            src="/bnmodviz.png"
+            alt="Sample 1"
+            style={{ width: "100%", height: "100%", borderRadius: "12px" }}
+          />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          style={styles.sampleBox}
+        >
+          <img
+            src="/cpt.png"
+            alt="Sample 1"
+            style={{ width: "100%", height: "100%", borderRadius: "12px" }}
+          />
         </motion.div>
       </div>
     </div>
   </Section>
 );
 
-export default Languages;
+export default WorkSamples;
 
+// define styles for this component
 const styles = {
   container: {
     display: "flex",
@@ -48,7 +58,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "start",
     color: "#f6f6f6",
-    // height: "35vh",
+    height: "100vh",
     textAlign: "center",
   },
   columnOne: {
@@ -76,25 +86,14 @@ const styles = {
   },
 
   sampleBox: {
-    // height: "170px",
+    height: "400px",
     width: "800px",
-    backgroundColor: "white",
+    backgroundColor: "#deecee",
     borderRadius: "12px",
     padding: "5px 10px",
     color: "#409ca9",
     fontSize: "16px",
     marginBottom: "20px",
     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
-    alignItems: "start",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-  },
-
-  languageTitle: {
-    fontSize: "20px",
-    fontWeight: "bold",
-    color: "black",
-    marginLeft: "10px",
   },
 };

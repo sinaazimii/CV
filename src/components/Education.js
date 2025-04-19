@@ -1,3 +1,4 @@
+import EducationItem from "./micros/educationItem";
 import Section from "./SectionWrapper";
 import { motion } from "framer-motion";
 
@@ -17,40 +18,22 @@ const Education = () => (
       </div>
 
       <div style={styles.columnTwo}>
-        <motion.div
-          style={styles.sampleBox}
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: false }}
-        >
-          <img
-            src="/ufr.svg"
-            alt="Freiburg University"
-            style={{ width: "200px", height: "50px" }}
-          />
-          <p style={styles.courseTitle}>
-            Ms.c Computer Science, University of Freiburg, Germany
-          </p>
-          <p style={styles.date}>2022-2025</p>
-        </motion.div>
-        <motion.div
-          style={styles.sampleBox}
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: false }}
-        >
-          <img
-            src="/su.jpg"
-            alt="Shiraz University"
-            style={{ width: "50px", height: "50px", marginLeft: "10px" }}
-          />
-          <p style={styles.courseTitle}>
-            Bs.c Computer Science, Shiraz University, Iran
-          </p>
-          <p style={styles.date}>2016-2021</p>
-        </motion.div>
+
+      <EducationItem
+          title="Master of Science in Computer Science,  University of Freiburg, Germany"
+          logo="/ufr.svg"
+          logoSize={{ width: "150px", height: "50px" }}
+          period="2022 - 2025"
+          link="https://www.uni-freiburg.de/"
+        />
+        <EducationItem
+          title="Bachelor of Science in Computer Engineering, Shiraz University, Iran"
+          logo="/su.jpg"
+          logoSize={{ width: "50px", height: "50px" }}
+          period="2016 - 2021"
+          link="https://shirazu.ac.ir/en/home"
+        />
+
       </div>
     </div>
   </Section>
@@ -83,7 +66,6 @@ const styles = {
     alignItems: "center",
     justifyContent: "start",
     margin: "50px",
-    // backgroundColor: 'red',
   },
 
   title: {
@@ -106,17 +88,5 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-  },
-
-  courseTitle: {
-    fontSize: "20px",
-    fontWeight: "bold",
-    color: "black",
-    marginLeft: "10px",
-  },
-  date: {
-    fontSize: "15px",
-    color: "black",
-    marginLeft: "10px",
   },
 };

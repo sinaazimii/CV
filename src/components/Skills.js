@@ -1,6 +1,6 @@
 import Section from "./SectionWrapper";
-import SvgIcon from "./Icon";
 import { motion } from "framer-motion";
+import SkillGroup from "./micros/skillGroup";
 
 const languages = ["JavaScript", "Python", "Java", "HTML", "CSS"];
 
@@ -51,86 +51,30 @@ const Skills = () => (
 
         <div style={styles.skillContainer}>
           <div style={styles.skillBoxContainer}>
-            <motion.div
-              style={styles.skillBox}
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: false, amount: 0.3 }}
-            >
-              <div style={styles.skillBoxHeader}>
-                <SvgIcon svgPath="/code.svg" />
-                <p style={{ margin: "10px" }}>Languages</p>
-              </div>
-              <div style={styles.skillsList}>
-                {languages.map((tool) => (
-                  <p key={tool} style={{ margin: "10px" }}>
-                    {tool}
-                  </p>
-                ))}
-              </div>
-            </motion.div>
 
-            <motion.div
-              style={styles.skillBox}
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: false, amount: 0.3 }}
-            >
-              <div style={styles.skillBoxHeader}>
-                <SvgIcon svgPath="/gear.svg" />
-                <p style={{ margin: "10px" }}>Tools</p>
-              </div>
-              <div style={styles.skillsList}>
-                {tools.map((tool) => (
-                  <p key={tool} style={{ margin: "10px" }}>
-                    {tool}
-                  </p>
-                ))}
-              </div>
-            </motion.div>
+            <SkillGroup
+              title="Languages"
+              icon="/code.svg"
+              skillList={languages}
+            />
+            <SkillGroup
+              title="Tools"
+              icon="/gear.svg"
+              skillList={tools}
+            />
           </div>
-
           <div style={styles.skillBoxContainer}>
-            <motion.div
-              style={styles.skillBox}
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: false, amount: 0.3 }}
-            >
-              <div style={styles.skillBoxHeader}>
-                <SvgIcon svgPath="/framework.svg" />
-                <p style={{ margin: "10px" }}>Frameworks</p>
-              </div>
-              <div style={styles.skillsList}>
-                {frameworks.map((tool) => (
-                  <p key={tool} style={{ margin: "10px" }}>
-                    {tool}
-                  </p>
-                ))}
-              </div>
-            </motion.div>
-            <motion.div
-              style={styles.skillBox}
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: false, amount: 0.3 }}
-            >
-              <div style={styles.skillBoxHeader}>
-                <SvgIcon svgPath="/people.svg" />
-                <p style={{ margin: "10px" }}>Soft Skills</p>
-              </div>
-              <div style={styles.skillsList}>
-                {softSkills.map((tool) => (
-                  <p key={tool} style={{ margin: "10px" }}>
-                    {tool}
-                  </p>
-                ))}
-              </div>
-            </motion.div>
+              <SkillGroup
+                title="Frameworks"
+                icon="/framework.svg"
+                skillList={frameworks}
+              />
+              <SkillGroup
+                title="Soft Skills"
+                icon="/people.svg"
+                skillList={softSkills}
+              />
+
           </div>
         </div>
       </div>
