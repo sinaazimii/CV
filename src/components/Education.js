@@ -1,30 +1,62 @@
-import Section from './SectionWrapper';
+import Section from "./SectionWrapper";
+import { motion } from "framer-motion";
 
 const Education = () => (
   <Section id="education" bgColor="#f6f6f6">
     <div style={styles.container}>
       <div style={styles.columnOne}>
-        <p style={styles.title}>Education</p>
+        <motion.h2
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          style={styles.title}
+        >
+          Education
+        </motion.h2>
       </div>
 
       <div style={styles.columnTwo}>
-        <div style={styles.sampleBox}>
-          <img src="/ufr.svg" alt="Freiburg University" style={{ width: "200px", height: "50px"}} />
-          <p style={styles.courseTitle}>Ms.c Computer Science, University of Freiburg, Germany</p>
+        <motion.div
+          style={styles.sampleBox}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: false }}
+        >
+          <img
+            src="/ufr.svg"
+            alt="Freiburg University"
+            style={{ width: "200px", height: "50px" }}
+          />
+          <p style={styles.courseTitle}>
+            Ms.c Computer Science, University of Freiburg, Germany
+          </p>
           <p style={styles.date}>2022-2025</p>
-        </div>
-        <div style={styles.sampleBox}>
-        <img src="/su.jpg" alt="Shiraz University" style={{ width: "50px", height: "50px", marginLeft:'10px'}} />
-         <p style={styles.courseTitle}>Bs.c Computer Science, Shiraz University, Iran</p>
+        </motion.div>
+        <motion.div
+          style={styles.sampleBox}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: false }}
+        >
+          <img
+            src="/su.jpg"
+            alt="Shiraz University"
+            style={{ width: "50px", height: "50px", marginLeft: "10px" }}
+          />
+          <p style={styles.courseTitle}>
+            Bs.c Computer Science, Shiraz University, Iran
+          </p>
           <p style={styles.date}>2016-2021</p>
-        </div>
+        </motion.div>
       </div>
-  </div>
+    </div>
   </Section>
 );
 
 export default Education;
-
 
 const styles = {
   container: {
@@ -87,6 +119,4 @@ const styles = {
     color: "black",
     marginLeft: "10px",
   },
-
-
 };

@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* filepath: d:\Portfolio\portfolio\src\index.css */
+main {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.section {
+  scroll-snap-align: start; /* Snap sections to the top */
+  height: 100vh; /* Each section takes up the full viewport height */
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for links and buttons */
+}
+
+.skill-box.slide-in {
+  opacity: 1; /* Make visible */
+  transform: translateX(0); /* Slide into place */
+}
+
+.progress-bar.bg-custom {
+  background-color: #2e9fb1 !important; /* progress color */
+}

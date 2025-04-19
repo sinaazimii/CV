@@ -1,27 +1,48 @@
 import Section from "./SectionWrapper";
+import { motion } from "framer-motion";
 
 const WorkExperience = () => (
   <Section id="work" bgColor="#f6f6f6" height={"100vh"}>
     <div style={styles.container}>
       <div style={styles.columnOne}>
-        <p style={styles.title}>Work Samples</p>
+        <motion.h2
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          style={styles.title}
+        >
+          Work Samples
+        </motion.h2>
       </div>
 
       <div style={styles.columnTwo}>
-        <div style={styles.sampleBox}>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          style={styles.sampleBox}
+        >
           <img
             src="/bnmodviz.png"
             alt="Sample 1"
             style={{ width: "100%", height: "100%", borderRadius: "12px" }}
           />
-        </div>
-        <div style={styles.sampleBox}>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          style={styles.sampleBox}
+        >
           <img
             src="/cpt.png"
             alt="Sample 1"
             style={{ width: "100%", height: "100%", borderRadius: "12px" }}
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   </Section>

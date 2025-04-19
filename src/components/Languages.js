@@ -1,26 +1,45 @@
-import Section from './SectionWrapper';
-
+import Section from "./SectionWrapper";
+import { motion } from "framer-motion";
+import ProgressBar from "react-bootstrap/ProgressBar";
+import LanguageProgress from "./LanguageProgress";
 const Languages = () => (
   <Section id="languages" bgColor="#f6f6f6">
     <div style={styles.container}>
       <div style={styles.columnOne}>
-        <p style={styles.title}>Languages</p>
+        <motion.h2
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          style={styles.title}
+        >
+          Languages
+        </motion.h2>
       </div>
 
       <div style={styles.columnTwo}>
-        <div style={styles.sampleBox}>
-          <p style={styles.languageTitle}>English</p>
-          <p style={styles.languageTitle}>German</p>
-          <p style={styles.languageTitle}>Persian</p>
-        </div>
-
+        <motion.div
+          style={styles.sampleBox}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: false }}
+        >
+          <p style={styles.languageTitle}>
+            English: C1 (IELTS Overall Band Score)
+          </p>
+          <LanguageProgress label="English: C1" target={90} />
+          <p style={styles.languageTitle}>German: A2</p>
+          <LanguageProgress label="German: A2" target={30} />
+          <p style={styles.languageTitle}>Persian: Native</p>
+          <LanguageProgress label="Persian: Native" target={100} />
+        </motion.div>
       </div>
-  </div>
+    </div>
   </Section>
 );
 
 export default Languages;
-
 
 const styles = {
   container: {
@@ -29,7 +48,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "start",
     color: "#f6f6f6",
-    height: "35vh",
+    // height: "35vh",
     textAlign: "center",
   },
   columnOne: {
@@ -57,7 +76,7 @@ const styles = {
   },
 
   sampleBox: {
-    height: "170px",
+    // height: "170px",
     width: "800px",
     backgroundColor: "white",
     borderRadius: "12px",
@@ -78,5 +97,4 @@ const styles = {
     color: "black",
     marginLeft: "10px",
   },
-
 };

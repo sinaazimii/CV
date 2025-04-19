@@ -1,5 +1,6 @@
 import Section from "./SectionWrapper";
 import SvgIcon from "./Icon";
+import { motion } from "framer-motion";
 
 const languages = ["JavaScript", "Python", "Java", "HTML", "CSS"];
 
@@ -15,24 +16,48 @@ const softSkills = [
 ];
 
 const Skills = () => (
-  <Section id="skills" bgColor="#f6f6f6" height={'100vh'}>
+  <Section id="skills" bgColor="#f6f6f6" height={"100vh"}>
     <div>
       <div style={styles.container}>
-      <div style={styles.rowOne}>
-        <p style={styles.explain}>
-        I bring a solid foundation built through a strong academic background, hands-on projects, and professional work experience. I'm passionate about solving complex challenges and take pride in developing responsive, intuitive, and user-centered applications that deliver real value.
-        </p>
-      </div>
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          style={styles.rowOne}
+        >
+          <p style={styles.explain}>
+            I bring a solid foundation built through a strong academic
+            background, hands-on projects, and professional work experience. I'm
+            passionate about solving complex challenges and take pride in
+            developing responsive, intuitive, and user-centered applications
+            that deliver real value.
+          </p>
+        </motion.div>
       </div>
 
       <div style={styles.rowTwo}>
         <div style={styles.titleContainer}>
-          <h2 style={styles.title}>Skills</h2>
+          <motion.h2
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.3 }}
+            style={styles.title}
+          >
+            Skills
+          </motion.h2>
         </div>
 
         <div style={styles.skillContainer}>
           <div style={styles.skillBoxContainer}>
-            <div style={styles.skillBox}>
+            <motion.div
+              style={styles.skillBox}
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
               <div style={styles.skillBoxHeader}>
                 <SvgIcon svgPath="/code.svg" />
                 <p style={{ margin: "10px" }}>Languages</p>
@@ -44,9 +69,15 @@ const Skills = () => (
                   </p>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
-            <div style={styles.skillBox}>
+            <motion.div
+              style={styles.skillBox}
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
               <div style={styles.skillBoxHeader}>
                 <SvgIcon svgPath="/gear.svg" />
                 <p style={{ margin: "10px" }}>Tools</p>
@@ -58,11 +89,17 @@ const Skills = () => (
                   </p>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
 
           <div style={styles.skillBoxContainer}>
-            <div style={styles.skillBox}>
+            <motion.div
+              style={styles.skillBox}
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
               <div style={styles.skillBoxHeader}>
                 <SvgIcon svgPath="/framework.svg" />
                 <p style={{ margin: "10px" }}>Frameworks</p>
@@ -74,8 +111,14 @@ const Skills = () => (
                   </p>
                 ))}
               </div>
-            </div>
-            <div style={styles.skillBox}>
+            </motion.div>
+            <motion.div
+              style={styles.skillBox}
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
               <div style={styles.skillBoxHeader}>
                 <SvgIcon svgPath="/people.svg" />
                 <p style={{ margin: "10px" }}>Soft Skills</p>
@@ -87,7 +130,7 @@ const Skills = () => (
                   </p>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -112,7 +155,6 @@ const styles = {
     fontSize: "31px",
     color: "white",
     margin: "20px",
-    
   },
 
   titleContainer: {
