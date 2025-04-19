@@ -4,7 +4,7 @@ import SvgIcon from "./Icon";
 const SkillGroup = ({ title, icon, skillList, isMobile }) => {
   return (
     <motion.div
-    style={{...styles.skillBox, height: isMobile ? "auto" : "150px", width: isMobile ? "90vw" : "500px"}}
+    style={{...styles.skillBox, height: isMobile ? "auto" : "16vh", width: isMobile ? "90vw" : "30vw"}}
     initial={{ opacity: 0, x: 200 }}
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
@@ -37,8 +37,6 @@ const styles = {
   },
 
   skillBox: {
-    height: "150px",
-    width: "500px",
     backgroundColor: "white",
     borderRadius: "12px",
     padding: "5px 10px",

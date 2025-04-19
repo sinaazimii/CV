@@ -30,7 +30,7 @@ const Languages = () => {
 
       <div style={styles.columnTwo}>
         <motion.div
-          style={{...styles.sampleBox, width: isMobile ? "350px" : "800px"}}
+          style={{...styles.sampleBox, width: isMobile ? "90vw" : "42vw"}}
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}

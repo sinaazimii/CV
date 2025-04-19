@@ -21,7 +21,7 @@ function App() {
   return (
     <main className="font-sans" style={{ backgroundColor: "#f6f6f6" }}>
       
-      {!isMobile && (<ScrollNav />)}
+      {/* {!isMobile && (<ScrollNav />)} */}
       <div id="hero" className="section">
         <Hero />
       </div>

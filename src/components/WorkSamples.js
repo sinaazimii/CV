@@ -35,7 +35,7 @@ const WorkSamples = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: false, amount: 0.3 }}
-          style={{...styles.sampleBox, width: isMobile? "350px":"800px", height: isMobile? "180px" :"400px"}}
+          style={{...styles.sampleBox, width: isMobile? "90vw":"45vw", height: isMobile? "22vh" :"45vh"}}
         >
           <img
             src="/bnmodviz.png"
@@ -48,7 +48,7 @@ const WorkSamples = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: false, amount: 0.3 }}
-          style={{...styles.sampleBox, width: isMobile? "350px":"800px", height: isMobile? "180px" :"400px"}}
+          style={{...styles.sampleBox, width: isMobile? "90vw":"45vw", height: isMobile? "22vh" :"45vh"}}   
         >
           <img
             src="/cpt.png"
@@ -99,8 +99,6 @@ const styles = {
   },
 
   sampleBox: {
-    height: "400px",
-    width: "800px",
     backgroundColor: "#deecee",
     borderRadius: "12px",
     padding: "5px 10px",

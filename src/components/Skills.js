@@ -219,7 +219,6 @@ const styles = {
 
   skillBox: {
     height: "150px",
-    width: "500px",
     backgroundColor: "#deecee",
     borderRadius: "12px",
     padding: "5px 10px",

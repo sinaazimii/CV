@@ -4,9 +4,9 @@ const Section = ({ children, id, bgColor, height}) => {
 
   return (
     <div
-      style={{ backgroundColor: bgColor, height: height }}
+      style={{ backgroundColor: bgColor, height: height, width:"100%" }}
     >
-      <div className="max-w-4xl w-full" >{children}</div>
+      <div>{children}</div>
     </div>
   );
 };

@@ -36,8 +36,8 @@ const LanguageProgress = ({ label, target, color = "#2e9fb1", isMobile }) => {
       <ProgressBar
         now={progress}
         style={{
-          height: isMobile? "15px":"20px",
-          width: isMobile? "170px":"250px",
+          height:"2vh",
+          width: isMobile? "40vw":"10vw",
           marginLeft: "10px",
           marginBottom: "10px",
           backgroundColor: "#f0f0f0",

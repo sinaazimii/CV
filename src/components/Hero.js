@@ -18,11 +18,11 @@ const Hero = () => {
   }, []);
 
   const heroRef = useRef(null);
-  const isInView = useInView(heroRef, { amount: 0.5 }); // Trigger when 50% visible
+  const isInView = useInView(heroRef, { amount: 0.5 }); 
   
 
   return (
-    <Section id="hero" bgColor="#f6f6f6" height={"100vh"} ref={heroRef}>
+    <Section id="hero" bgColor="#f6f6f6" height={"20vh"}>
       <div
       ref={heroRef}
         className="text-center"
@@ -88,7 +88,7 @@ const Hero = () => {
             src="/me.png"
             alt="Profile"
             style={{
-              width: isMobile ? "180px" : "250px",
+              width: isMobile ? "50vw" : "13vw",
               height: "auto",
             }}
           />
@@ -145,9 +145,8 @@ const styles = {
     backgroundColor: "#f6f6f6",
     color: "#f6f6f6",
     height: "100vh",
-    width: "100vw",
-    backgroundColor: "red",
     textAlign: "center",
+    overflowX: "hidden",
   },
   headerContainer: {
     display: "flex",
@@ -211,7 +210,6 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     height: "100px",
-    width: "100px",
     justifyContent: "center",
     textAlign: "start",
     gap: "20px",
