@@ -107,6 +107,7 @@ const ProjectsCarousel = () => {
           >
             <div style={styles.sampleImage}>
               <img
+              draggable={false}
                 src={item.image}
                 alt={item.title}
                 style={{
