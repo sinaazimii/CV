@@ -32,7 +32,8 @@ const Education = () => {
       <div style={styles.columnTwo}>
 
       <EducationItem
-          title="Master of Science in Computer Science,  University of Freiburg, Germany"
+          title="Computer Science,  University of Freiburg, Germany"
+          degree={"Master of Science"}
           logo={`${process.env.PUBLIC_URL}/ufr.svg`}
           logoSize={{ width: "150px", height: "50px" }}
           period="2022 - 2025"
@@ -40,7 +41,8 @@ const Education = () => {
           isMobile={isMobile}
         />
         <EducationItem
-          title="Bachelor of Science in Computer Engineering, Shiraz University, Iran"
+          title="Computer Engineering, Shiraz University, Iran"
+          degree={"Bachelor of Science"}
           logo={`${process.env.PUBLIC_URL}/su.jpg`}
           logoSize={{ width: "50px", height: "50px" }}
           period="2016 - 2021"

@@ -1,5 +1,7 @@
 import { title } from "framer-motion/client";
 import { useState, useEffect } from "react";
+import { useRef } from "react";
+
 
 const ProjectsCarousel = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -11,6 +13,54 @@ const ProjectsCarousel = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const carouselRef = useRef(null);
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+  
+    const handleMouseDown = (e) => {
+      isDown = true;
+      startX = e.pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+      carousel.style.cursor = "grabbing"; // Set cursor on grab
+    };
+    
+    const handleMouseLeave = () => {
+      isDown = false;
+      carousel.style.cursor = "grab"; // Reset cursor
+    };
+    
+    const handleMouseUp = () => {
+      isDown = false;
+      carousel.style.cursor = "grab"; // Reset cursor
+    };
+  
+    const handleMouseMove = (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - carousel.offsetLeft;
+      const walk = (x - startX) * 2; // Scroll speed
+      carousel.scrollLeft = scrollLeft - walk;
+    };
+  
+    carousel.addEventListener("mousedown", handleMouseDown);
+    carousel.addEventListener("mouseleave", handleMouseLeave);
+    carousel.addEventListener("mouseup", handleMouseUp);
+    carousel.addEventListener("mousemove", handleMouseMove);
+  
+    return () => {
+      carousel.removeEventListener("mousedown", handleMouseDown);
+      carousel.removeEventListener("mouseleave", handleMouseLeave);
+      carousel.removeEventListener("mouseup", handleMouseUp);
+      carousel.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+
   const items = [
     {
       id: 1,
@@ -45,7 +95,7 @@ const ProjectsCarousel = () => {
   ];
   return (
     <div style={styles.container}>
-      <div style={styles.carouselWrapper}>
+      <div style={styles.carouselWrapper} ref={carouselRef}>
         {items.map((item) => (
           <div
             style={{

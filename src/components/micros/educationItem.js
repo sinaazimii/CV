@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { text } from "framer-motion/client";
 
-const EducationItem = ({ title, logo, period, logoSize, link, isMobile }) => {
+const EducationItem = ({ title, degree, logo, period, logoSize, link, isMobile }) => {
   return (
     <motion.div
-      style={{...styles.sampleBox, width: isMobile ? "90vw" : "42vw"}}
+      style={{...styles.sampleBox, width: isMobile ? "90vw" : "42vw", minHeight: isMobile ? "10vh" : "22vh"}}
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -17,6 +17,7 @@ const EducationItem = ({ title, logo, period, logoSize, link, isMobile }) => {
         style={{ width: logoSize.width, height: logoSize.height, marginLeft: "10px" }}
       />
     </a>
+      <p style={{...styles.courseTitle, fontSize: isMobile? "13px" : "17px"}}>{degree}</p>
       <p style={{...styles.courseTitle, fontSize: isMobile? "13px" : "17px" }}>{title}</p>
       <p style={{...styles.date, fontSize: isMobile? "10px" : "14px"}}>{period}</p>
     </motion.div>
