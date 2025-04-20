@@ -38,7 +38,7 @@ const WorkSamples = () => {
           style={{...styles.sampleBox, width: isMobile? "90vw":"45vw", height: isMobile? "22vh" :"45vh"}}
         >
           <img
-            src="/bnmodviz.png"
+            src={`${process.env.PUBLIC_URL}/bnmodviz.png`}
             alt="Sample 1"
             style={{ width: "100%", height: "100%", borderRadius: "10px" }}
           />
@@ -51,7 +51,7 @@ const WorkSamples = () => {
           style={{...styles.sampleBox, width: isMobile? "90vw":"45vw", height: isMobile? "22vh" :"45vh"}}   
         >
           <img
-            src="/cpt.png"
+            src={`${process.env.PUBLIC_URL}/cpt.png`}
             alt="Sample 1"
             style={{ width: "100%", height: "100%", borderRadius: "10px" }}
           />

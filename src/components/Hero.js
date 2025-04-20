@@ -85,7 +85,7 @@ const Hero = () => {
         </div>
         <div style={{...styles.columnTwo, marginTop: isMobile ? "0" : "50px"}}>
           <img
-            src="/me.png"
+            src={`${process.env.PUBLIC_URL}/me.png`}
             alt="Profile"
             style={{
               width: isMobile ? "50vw" : "13vw",
@@ -105,7 +105,7 @@ const Hero = () => {
               rel="noopener noreferrer"
             >
               <SvgIcon
-                svgPath="/github.svg"
+                svgPath={`${process.env.PUBLIC_URL}/github.svg`}
                 containerSize={"50px"}
                 iconSize={"30px"}
               />
@@ -116,14 +116,14 @@ const Hero = () => {
               rel="noopener noreferrer"
             >
               <SvgIcon
-                svgPath="/linkedin.svg"
+                svgPath={`${process.env.PUBLIC_URL}/linkedin.svg`}
                 containerSize={"50px"}
                 iconSize={"30px"}
               />
             </a>
             <a href="mailto:your.email@example.com?subject=Let's%20Talk&body=Hi%20Sina,%0D%0AI'm%20interested%20in%20your%20work!">
               <SvgIcon
-                svgPath="/mail.svg"
+                svgPath={`${process.env.PUBLIC_URL}/mail.svg`}
                 containerSize={"50px"}
                 iconSize={"30px"}
               />

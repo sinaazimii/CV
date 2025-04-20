@@ -93,20 +93,20 @@ const Skills = () => {
               <div style={styles.skillBoxContainer}>
                 <SkillGroup
                   title="Languages"
-                  icon="/code.svg"
+                  icon={`${process.env.PUBLIC_URL}/code.svg`}
                   skillList={languages}
                 />
-                <SkillGroup title="Tools" icon="/gear.svg" skillList={tools} />
+                <SkillGroup title="Tools" icon={`${process.env.PUBLIC_URL}/gear.svg`} skillList={tools} />
               </div>
               <div style={styles.skillBoxContainer}>
                 <SkillGroup
                   title="Frameworks"
-                  icon="/framework.svg"
+                  icon={`${process.env.PUBLIC_URL}/framework.svg`}
                   skillList={frameworks}
                 />
                 <SkillGroup
                   title="Soft Skills"
-                  icon="/people.svg"
+                  icon={`${process.env.PUBLIC_URL}/people.svg`}
                   skillList={softSkills}
                 />
               </div>
@@ -117,25 +117,25 @@ const Skills = () => {
             >
               <SkillGroup
                 title="Languages"
-                icon="/code.svg"
+                icon={`${process.env.PUBLIC_URL}/code.svg`}
                 skillList={languages}
                 isMobile={isMobile}
               />
               <SkillGroup
                 title="Tools"
-                icon="/gear.svg"
+                icon={`${process.env.PUBLIC_URL}/gear.svg`}
                 skillList={tools}
                 isMobile={isMobile}
               />
               <SkillGroup
                 title="Frameworks"
-                icon="/framework.svg"
+                icon={`${process.env.PUBLIC_URL}/framework.svg`}
                 skillList={frameworks}
                 isMobile={isMobile}
               />
               <SkillGroup
                 title="Soft Skills"
-                icon="/people.svg"
+                icon={`${process.env.PUBLIC_URL}/people.svg`}
                 skillList={softSkills}
                 isMobile={isMobile}
               />

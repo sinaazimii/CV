@@ -16,7 +16,7 @@ const WorkExperience = () => {
   return (
     <Section id="work-experience" bgColor="#f6f6f6">
       <div style={{...styles.container, flexDirection: isMobile ? "column" : "row", alignItems: isMobile?  'center' : "start"}}>
-        <div style={styles.columnOne}>
+        <div style={{...styles.columnOne, margin: isMobile ? "0px" : "50px"}}>
           <motion.h2
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -35,7 +35,7 @@ const WorkExperience = () => {
             period="Jan 2024 - May 2025"
             description="Worked on a project related to the analysis of complex systems using machine learning techniques."
             link="https://www.hahn-schickard.de/"
-            logo="/hahn.svg"
+            logo={`${process.env.PUBLIC_URL}/hahn.svg`}
             techs={" React, Flask, Git, Miro"}
             isMobile={isMobile}
           />
@@ -45,7 +45,7 @@ const WorkExperience = () => {
             period="Aug 2024 - Dec 2024"
             description="Worked on a project related to the analysis of complex systems using machine learning techniques."
             link="https://www.hahn-schickard.de/"
-            logo="/hahn.svg"
+            logo={`${process.env.PUBLIC_URL}/hahn.svg`}
             techs={" React, Django, Flutter, Git, Docker"}
             isMobile={isMobile}
           />
@@ -55,7 +55,7 @@ const WorkExperience = () => {
             period="Oct 2022 - May 2024"
             description="Worked on a project related to the analysis of complex systems using machine learning techniques."
             link="https://www.psiori.com/"
-            logo="/psiori.png"
+            logo={`${process.env.PUBLIC_URL}/psiori.png`}
             techs={" Python, C++, Git, Docker, Jira, Linux, Bash"}
             isMobile={isMobile}
           />
@@ -82,7 +82,6 @@ const styles = {
     flex: 1 / 5,
     alignItems: "center",
     justifyContent: "center",
-    margin: "50px",
   },
   columnTwo: {
     display: "flex",
@@ -90,7 +89,6 @@ const styles = {
     flex: 4 / 5,
     alignItems: "center",
     justifyContent: "center",
-    // backgroundColor: 'red',
   },
 
   title: {
