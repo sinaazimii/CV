@@ -94,5 +94,6 @@ const styles = {
     fontSize: "60px",
     fontWeight: "bold",
     color: "#2e9fb1",
+    marginBottom: "15px",
   },
 };

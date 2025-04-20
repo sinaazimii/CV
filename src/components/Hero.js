@@ -30,6 +30,7 @@ const Hero = () => {
           flexDirection: isMobile ? "column" : "row",
           textAlign: isMobile ? "center" : "start",
           padding: isMobile ? "30px 10px" : "0",
+          height: isMobile ? "auto" : "100vh",
         }}
       >
         {isInView && (
@@ -164,7 +165,6 @@ const styles = {
     alignItems: "center",
     backgroundColor: "#f6f6f6",
     color: "#f6f6f6",
-    height: "100vh",
     textAlign: "center",
     overflowX: "hidden",
   },
