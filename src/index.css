@@ -12,7 +12,6 @@ code {
     monospace;
 }
 
-/* filepath: d:\Portfolio\portfolio\src\index.css */
 main {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;

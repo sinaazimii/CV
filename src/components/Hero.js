@@ -18,13 +18,12 @@ const Hero = () => {
   }, []);
 
   const heroRef = useRef(null);
-  const isInView = useInView(heroRef, { amount: 0.5 }); 
-  
+  const isInView = useInView(heroRef, { amount: 0.5 });
 
   return (
     <Section id="hero" bgColor="#f6f6f6" height={"20vh"}>
       <div
-      ref={heroRef}
+        ref={heroRef}
         className="text-center"
         style={{
           ...styles.container,
@@ -33,37 +32,53 @@ const Hero = () => {
           padding: isMobile ? "30px 10px" : "0",
         }}
       >
-        {isInView && (<motion.div
-          initial={{ width: 0 }}
-          animate={{ width: isMobile ? "90vw" : "60vw" }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-          style={{...styles.headerContainer, height: isMobile ? "50px" : "100px"}}
-        >
-          <h2
+        {isInView && (
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: isMobile ? "90vw" : "60vw" }}
+            transition={{ duration: 1, ease: "easeInOut" }}
             style={{
-              fontSize: isMobile ? "1.5rem" : "3rem",
-              color: "#f6f6f6",
-              fontWeight: "bold",
-              whiteSpace: "nowrap"
+              ...styles.headerContainer,
+              height: isMobile ? "50px" : "100px",
             }}
           >
-            Seyed Sina Azimi
-          </h2>
-        </motion.div>)}
-        
-        <div style={styles.columnOne}>
-          <motion.div
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, type: "spring", stiffness: 120 }}
-            style={styles.capsule}
-          >
-            <i className="bi bi-dot"></i> Available for work
+            <h2
+              style={{
+                fontSize: isMobile ? "1.5rem" : "3rem",
+                color: "#f6f6f6",
+                fontWeight: "bold",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Seyed Sina Azimi
+            </h2>
           </motion.div>
+        )}
+
+        <div
+          style={{
+            ...styles.columnOne,
+            margin: isMobile ? "50px 0 0 0" : "50px 0 0 50px",
+            alignItems: isMobile? "center" : 'flex-start',
+          }}
+        >
+          {isMobile && (
+            <motion.div
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, type: "spring", stiffness: 120 }}
+              style={styles.capsule}
+            >
+              <i className="bi bi-dot"></i> Available for work
+            </motion.div>
+          )}
 
           <div style={styles.titleContainer}>
             <p
-              style={{ ...styles.title, fontSize: isMobile ? "2rem" : "3rem" }}
+              style={{
+                ...styles.title,
+                fontSize: isMobile ? "1.5rem" : "3rem",
+              }}
             >
               <Typewriter
                 words={["Hi, I'm a Frontend Developer"]}
@@ -75,15 +90,17 @@ const Hero = () => {
           <p
             style={{
               ...styles.subtitle,
-              fontSize: isMobile ? "1.2rem" : "1.5rem",
+              fontSize: isMobile ? "1rem" : "1.5rem",
             }}
           >
-            I Recently graduated master student in Computer Science from a top
+            Recently graduated master student in Computer Science from a top
             university and ready to dedicate my full time focus to frontend
             development.
           </p>
         </div>
-        <div style={{...styles.columnTwo, marginTop: isMobile ? "0" : "50px"}}>
+        <div
+          style={{ ...styles.columnTwo, marginTop: isMobile ? "0" : "50px" }}
+        >
           <img
             src={`${process.env.PUBLIC_URL}/me.png`}
             alt="Profile"
@@ -97,7 +114,10 @@ const Hero = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.3 }}
-            style={{...styles.socialMediaContainer, marginTop: isMobile? "0px" : "20px",}}
+            style={{
+              ...styles.socialMediaContainer,
+              marginTop: isMobile ? "0px" : "20px",
+            }}
           >
             <a
               href="https://github.com/sinaazimii"
@@ -175,9 +195,8 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     flex: 1 / 2,
-    alignItems: "flex-start",
     textAlign: "start",
-    margin: "50px 0 0 50px",
+    // margin: "50px 0 0 50px",
   },
   columnTwo: {
     display: "flex",
@@ -192,7 +211,7 @@ const styles = {
     padding: "8px",
     color: "#409ca9",
     fontSize: "16px",
-    marginBottom: "20px",
+    margin: "10px",
     boxShadow: "0px 0px 10px 10px rgba(0, 0, 0, 0.1)",
   },
   title: {
@@ -203,7 +222,6 @@ const styles = {
   },
   subtitle: {
     fontSize: "1.5rem",
-    marginBottom: "20px",
     color: "#2e9fb1",
   },
   socialMediaContainer: {

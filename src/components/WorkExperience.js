@@ -16,7 +16,7 @@ const WorkExperience = () => {
   return (
     <Section id="work-experience" bgColor="#f6f6f6">
       <div style={{...styles.container, flexDirection: isMobile ? "column" : "row", alignItems: isMobile?  'center' : "start"}}>
-        <div style={{...styles.columnOne, margin: isMobile ? "0px" : "50px"}}>
+        <div style={{...styles.columnOne, margin: isMobile ? "0px" : "50px", flex: isMobile? 1/10 :1 / 5}}>
           <motion.h2
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -79,7 +79,6 @@ const styles = {
   columnOne: {
     display: "flex",
     flexDirection: "column",
-    flex: 1 / 5,
     alignItems: "center",
     justifyContent: "center",
   },

@@ -16,7 +16,7 @@ const Languages = () => {
   return(
   <Section id="languages" bgColor="#f6f6f6">
     <div style={{...styles.container, flexDirection: isMobile ? "column" : "row"}}>
-      <div style={styles.columnOne}>
+      <div style={{...styles.columnOne, margin: isMobile ? "0px" : "50px"}}>
           <motion.h2
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -28,7 +28,7 @@ const Languages = () => {
           </motion.h2>
       </div>
 
-      <div style={styles.columnTwo}>
+      <div style={{...styles.columnTwo, margin: isMobile ? "10px" : "70px"}}>
         <motion.div
           style={{...styles.sampleBox, width: isMobile ? "90vw" : "42vw"}}
           initial={{ opacity: 0, scale: 0.8 }}
@@ -58,13 +58,11 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     color: "#f6f6f6",
-    // height: "35vh",
     textAlign: "center",
   },
   columnOne: {
     display: "flex",
     flexDirection: "column",
-    flex: 1 / 5,
     alignItems: "center",
     justifyContent: "center",
     marginTop: "10px",
@@ -75,8 +73,6 @@ const styles = {
     flex: 4 / 5,
     alignItems: "center",
     justifyContent: "start",
-    margin: "50px",
-    // backgroundColor: 'red',
   },
 
   title: {

@@ -29,7 +29,9 @@ const Skills = () => {
   return (
     <Section id="skills" bgColor="#f6f6f6" height={"100vh"}>
       <div>
-        <div style={styles.container}>
+        <div
+          style={{ ...styles.container, padding: isMobile ? "10px" : "20px" }}
+        >
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -37,13 +39,15 @@ const Skills = () => {
             viewport={{ once: false, amount: 0.3 }}
             style={{
               ...styles.rowOne,
-              marginBottom: isMobile ? "-30px" : "100px",
+              margin: isMobile ? "0" : "50px 0 100px 0",
+              width: isMobile ? "100%" : "80%",
             }}
           >
             <p
               style={{
                 ...styles.explain,
                 fontSize: isMobile ? "14px" : "30px",
+                margin: isMobile ? "10px" : "20px",
               }}
             >
               I bring a solid foundation built through a strong academic
@@ -53,94 +57,94 @@ const Skills = () => {
               that deliver real value.
             </p>
           </motion.div>
-        </div>
-
-        {isMobile && (
-          <div>
-            <motion.h2
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: false, amount: 0.3 }}
-              style={{
-                ...styles.title,
-                fontSize: "25px",
-                marginTop: "20px",
-                textAlign: "center",
-              }}
-            >
-              Skills
-            </motion.h2>
-          </div>
-        )}
-
-        <div style={styles.rowTwo}>
-          {!isMobile && (
-            <div style={styles.titleContainer}>
+          {isMobile && (
+            <div>
               <motion.h2
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 viewport={{ once: false, amount: 0.3 }}
-                style={styles.title}
+                style={{
+                  ...styles.title,
+                  fontSize: "25px",
+                  marginTop: "20px",
+                  textAlign: "center",
+                }}
               >
                 Skills
               </motion.h2>
             </div>
           )}
-          {!isMobile ? (
-            <div style={styles.skillContainer}>
-              <div style={styles.skillBoxContainer}>
+          <div style={{ ...styles.rowTwo, width: isMobile ? "100%" : "80%" }}>
+            {!isMobile && (
+              <div style={styles.titleContainer}>
+                <motion.h2
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  style={{...styles.title, marginLeft: "-10vw"}}
+                >
+                  Skills
+                </motion.h2>
+              </div>
+            )}
+            {!isMobile ? (
+              <div style={styles.skillContainer}>
+                <div style={styles.skillBoxContainer}>
+                  <SkillGroup
+                    title="Languages"
+                    icon={`${process.env.PUBLIC_URL}/code.svg`}
+                    skillList={languages}
+                  />
+                  <SkillGroup
+                    title="Tools"
+                    icon={`${process.env.PUBLIC_URL}/gear.svg`}
+                    skillList={tools}
+                  />
+                </div>
+                <div style={styles.skillBoxContainer}>
+                  <SkillGroup
+                    title="Frameworks"
+                    icon={`${process.env.PUBLIC_URL}/framework.svg`}
+                    skillList={frameworks}
+                  />
+                  <SkillGroup
+                    title="Soft Skills"
+                    icon={`${process.env.PUBLIC_URL}/people.svg`}
+                    skillList={softSkills}
+                  />
+                </div>
+              </div>
+            ) : (
+              <div style={{ display: "flex", flexDirection: "column" }}>
                 <SkillGroup
                   title="Languages"
                   icon={`${process.env.PUBLIC_URL}/code.svg`}
                   skillList={languages}
+                  isMobile={isMobile}
                 />
-                <SkillGroup title="Tools" icon={`${process.env.PUBLIC_URL}/gear.svg`} skillList={tools} />
-              </div>
-              <div style={styles.skillBoxContainer}>
+                <SkillGroup
+                  title="Tools"
+                  icon={`${process.env.PUBLIC_URL}/gear.svg`}
+                  skillList={tools}
+                  isMobile={isMobile}
+                />
                 <SkillGroup
                   title="Frameworks"
                   icon={`${process.env.PUBLIC_URL}/framework.svg`}
                   skillList={frameworks}
+                  isMobile={isMobile}
                 />
                 <SkillGroup
                   title="Soft Skills"
                   icon={`${process.env.PUBLIC_URL}/people.svg`}
                   skillList={softSkills}
+                  isMobile={isMobile}
                 />
               </div>
-            </div>
-          ) : (
-            <div
-              style={{ display: "flex", flexDirection: "column" }}
-            >
-              <SkillGroup
-                title="Languages"
-                icon={`${process.env.PUBLIC_URL}/code.svg`}
-                skillList={languages}
-                isMobile={isMobile}
-              />
-              <SkillGroup
-                title="Tools"
-                icon={`${process.env.PUBLIC_URL}/gear.svg`}
-                skillList={tools}
-                isMobile={isMobile}
-              />
-              <SkillGroup
-                title="Frameworks"
-                icon={`${process.env.PUBLIC_URL}/framework.svg`}
-                skillList={frameworks}
-                isMobile={isMobile}
-              />
-              <SkillGroup
-                title="Soft Skills"
-                icon={`${process.env.PUBLIC_URL}/people.svg`}
-                skillList={softSkills}
-                isMobile={isMobile}
-              />
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </Section>
@@ -156,14 +160,14 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     color: "#f6f6f6",
-    padding: "20px",
+    padding: "10px",
   },
 
   explain: {
     textAlign: "start",
     fontSize: "31px",
     color: "white",
-    margin: "20px",
+    margin: "10px",
   },
 
   titleContainer: {
@@ -195,9 +199,7 @@ const styles = {
     flex: 1,
     alignItems: "flex-start",
     justifyContent: "center",
-    margin: "20px",
     height: "300px",
-    width: "85%",
     backgroundColor: "#2e9fb1",
     borderRadius: "18px",
     marginBottom: "100px",
@@ -207,7 +209,8 @@ const styles = {
     display: "flex",
     flexDirection: "row",
     flex: 1,
-    margin: "20px",
+    alignItems: "center",
+    justifyContent: "center",
   },
 
   skillBoxContainer: {

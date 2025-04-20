@@ -1,10 +1,10 @@
 {
-  "name": "portfolio",
+  "name": "cv",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sinaazimii.github.io/cv",
+  "homepage": "https://sinaazimii.github.io/CV",
   "dependencies": {
-    "portfolio": "file:",
+    "cv": "file:",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",

@@ -4,7 +4,7 @@ import { text } from "framer-motion/client";
 const EducationItem = ({ title, logo, period, logoSize, link, isMobile }) => {
   return (
     <motion.div
-      style={{...styles.sampleBox, width: isMobile ? "90vw" : "42vw", height: isMobile ? "18vh" : "22vh"}}
+      style={{...styles.sampleBox, width: isMobile ? "90vw" : "42vw"}}
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}

@@ -17,7 +17,7 @@ const Education = () => {
   return (
   <Section id="education" bgColor="#f6f6f6">
     <div style={{...styles.container, flexDirection: isMobile ? "column" : "row", alignItems: isMobile?  'center' : "start",}}>
-      <div style={styles.columnOne}>
+      <div style={{...styles.columnOne, flex: isMobile ? 1/10 : 1 / 5, margin: isMobile ? "0px" : "50px"}}>
           <motion.h2
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -66,10 +66,9 @@ const styles = {
   columnOne: {
     display: "flex",
     flexDirection: "column",
-    flex: 1 / 5,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: "50px",
+
   },
   columnTwo: {
     display: "flex",
