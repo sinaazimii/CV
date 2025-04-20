@@ -1,13 +1,13 @@
 import Section from "./SectionWrapper";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import ProjectsCarousel from "./micros/projectsCarousel";
 
 const WorkSamples = () => {
-  
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);  // 768px is typical for mobile breakpoint
+      setIsMobile(window.innerWidth < 768); // 768px is typical for mobile breakpoint
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -15,22 +15,34 @@ const WorkSamples = () => {
   }, []);
 
   return (
-  <Section id="work" bgColor="#f6f6f6" height={"100vh"}>
-    <div style={{...styles.container, flexDirection: isMobile ? "column" : "row", alignItems: isMobile?  'center' : "start", justifyContent:'center'}}>
-        <div style={styles.columnOne}>
+    <Section id="work" bgColor="#f6f6f6" height={"100vh"}>
+      <div
+        style={{
+          ...styles.container,
+          flexDirection: isMobile ? "column" : "row",
+          alignItems: isMobile ? "center" : "center",
+          justifyContent: "center",
+        }}
+      >
+        <div style={{ ...styles.columnOne, flex: isMobile ? 1 / 10 : 1 / 15 }}>
           <motion.h2
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.3 }}
-            style={{...styles.title, fontSize: isMobile ? "25px" : "60px", textAlign: "center", marginTop: isMobile? "20px" : "35px"}}
+            style={{
+              ...styles.title,
+              fontSize: isMobile ? "25px" : "60px",
+              textAlign: "center",
+              marginTop: isMobile ? "20px" : "35px",
+            }}
           >
             Work Samples
           </motion.h2>
         </div>
 
-      <div style={styles.columnTwo}>
-        <motion.div
+        <div style={styles.columnTwo}>
+          {/* <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -55,12 +67,29 @@ const WorkSamples = () => {
             alt="Sample 1"
             style={{ width: "100%", height: "100%", borderRadius: "10px" }}
           />
-        </motion.div>
+        </motion.div> */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              width: isMobile? "90vw":"65vw",
+              height:  isMobile? "70vh":"88vh",
+              borderRadius: "10px",
+              border: "2px solid #2e9fb1",
+              backgroundColor: "#deecee",
+              padding: "10px",
+              marginRight: isMobile? "0":"40px",
+            }}
+          >
+            <ProjectsCarousel />
+          </div>
+        </div>
       </div>
-    </div>
-  </Section>
+    </Section>
   );
-}
+};
 
 export default WorkSamples;
 
@@ -77,7 +106,6 @@ const styles = {
   columnOne: {
     display: "flex",
     flexDirection: "column",
-    flex: 1 / 5,
     alignItems: "center",
     justifyContent: "center",
     margin: "50px",
