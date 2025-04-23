@@ -46,12 +46,10 @@ const Skills = () => {
             <p
               style={{
                 ...styles.explain,
-                fontSize: isMobile ? "14px" : "30px",
-                margin: isMobile ? "10px" : "20px",
+                fontSize: isMobile ? "4vw" : "1.5vw",
+                margin: isMobile ? "4vw" : "2vw",
               }}
             >
-              I bring a solid foundation built through a strong academic
-              background, hands-on projects, and professional work experience.
               I'm passionate about solving complex challenges and take pride in
               developing responsive, intuitive, and user-centered applications
               that deliver real value.
@@ -217,7 +215,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    gap: "20px",
+    gap: "2vw",
   },
 
   skillBox: {

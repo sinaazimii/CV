@@ -38,7 +38,7 @@ function App() {
       </div>
       <div id="education" className="section">
         <Education />
-        <Languages />
+        {/* <Languages /> */}
       </div>
     </main>
   );

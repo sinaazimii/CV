@@ -122,7 +122,7 @@ const ProjectsCarousel = () => {
               <h3
                 style={{
                   ...styles.title,
-                  fontSize: isMobile ? "15px" : "20px",
+                  fontSize: isMobile ? "5vw" : "1.3vw",
                 }}
               >
                 {item.title}
@@ -130,7 +130,7 @@ const ProjectsCarousel = () => {
               <p
                 style={{
                   ...styles.description,
-                  fontSize: isMobile ? "10px" : "13px",
+                  fontSize: isMobile ? "3vw" : "0.8vw",
                 }}
               >
                 {item.description}
@@ -184,7 +184,6 @@ const styles = {
     flex: 3.5 / 5,
   },
   sampleText: {
-    fontSize: "20px",
     fontWeight: "bold",
     color: "#2e9fb1",
     textAlign: "center",

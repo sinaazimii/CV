@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { text } from "framer-motion/client";
 
 const EducationItem = ({ title, degree, logo, period, logoSize, link, isMobile }) => {
   return (
@@ -17,8 +16,8 @@ const EducationItem = ({ title, degree, logo, period, logoSize, link, isMobile }
         style={{ width: logoSize.width, height: logoSize.height, marginLeft: "10px" }}
       />
     </a>
-      <p style={{...styles.courseTitle, fontSize: isMobile? "13px" : "17px"}}>{degree}</p>
-      <p style={{...styles.courseTitle, fontSize: isMobile? "13px" : "17px" }}>{title}</p>
+      <p style={{...styles.courseTitle, fontSize: isMobile? "4vw" : "1vw", marginBottom:'10px'}}>{degree}</p>
+      <p style={{...styles.courseTitle, fontSize: isMobile? "4vw" : "1vw" }}>{title}</p>
       <p style={{...styles.date, fontSize: isMobile? "10px" : "14px"}}>{period}</p>
     </motion.div>
   );
@@ -43,7 +42,6 @@ const styles = {
     },
   
     courseTitle: {
-      fontSize: "20px",
       fontWeight: "bold",
       color: "black",
       marginLeft: "10px",

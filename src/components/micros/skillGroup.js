@@ -29,13 +29,6 @@ export default SkillGroup;
 
 
 const styles = {
-  skillBoxContainer: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    gap: "20px",
-  },
-
   skillBox: {
     backgroundColor: "white",
     borderRadius: "12px",

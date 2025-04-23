@@ -45,7 +45,7 @@ const Hero = () => {
           >
             <h2
               style={{
-                fontSize: isMobile ? "1.5rem" : "3rem",
+                fontSize: isMobile ? "8vw" : "2vw",
                 color: "#f6f6f6",
                 fontWeight: "bold",
                 whiteSpace: "nowrap",
@@ -63,16 +63,15 @@ const Hero = () => {
             alignItems: isMobile? "center" : 'flex-start',
           }}
         >
-          {isMobile && (
+
             <motion.div
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, type: "spring", stiffness: 120 }}
-              style={styles.capsule}
+              style={{...styles.capsule, fontSize: isMobile ? "4vw" : "1vw"}}
             >
               <i className="bi bi-dot"></i> Available for work
             </motion.div>
-          )}
 
           <div style={styles.titleContainer}>
             <p
@@ -210,7 +209,6 @@ const styles = {
     borderRadius: "12px",
     padding: "8px",
     color: "#409ca9",
-    fontSize: "16px",
     margin: "10px",
     boxShadow: "0px 0px 10px 10px rgba(0, 0, 0, 0.1)",
   },
@@ -230,7 +228,7 @@ const styles = {
     height: "100px",
     justifyContent: "center",
     textAlign: "start",
-    gap: "20px",
+    gap: "2vw",
     alignItems: "center",
   },
 };

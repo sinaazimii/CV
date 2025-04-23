@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 
 const WorkItem = ({ title, place, period, logo, link, techs, isMobile }) => {
+
+  const isHeightLow = window.innerHeight < 750;
+
   return (
     <motion.div
-      style={{...styles.sampleBox, width: isMobile ? "90vw" : "39vw", }}
+      style={{...styles.sampleBox, width: isMobile ? "90vw" : "39vw", height: "27vh"}}
       initial={{ opacity: 0, scale: 0.7 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -16,11 +19,11 @@ const WorkItem = ({ title, place, period, logo, link, techs, isMobile }) => {
           style={{ width: isMobile? "40px" :"50px", height: isMobile? "40px": "50px", margin: isMobile? "10px" : "10px", cursor: "pointer" }}
         />
       </a>
-      <p style={{...styles.jobTitle, fontSize: isMobile ? "14px" : "20px"}}>
+      <p style={{...styles.jobTitle, fontSize: isMobile ? "4vw" : "1vw"}}>
         {title}
-        
       </p>
-      <p style={{...styles.jobPlace, fontSize: isMobile? "13px" : "17px" }}>{place}</p>
+      {!isHeightLow && <p style={{...styles.jobPlace, fontSize: isMobile? "3vw" : "0.8vw" }}>{place}</p> }
+      
       <p style={{...styles.date, fontSize: isMobile? "10px" : "14px"}}>{period}</p>
       <p style={{...styles.techs, fontSize: isMobile? "12px" : "16px"}}>Tech:{techs}</p>
     </motion.div>

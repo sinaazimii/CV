@@ -14,40 +14,38 @@ const Languages = () => {
       return () => window.removeEventListener("resize", handleResize);
     }, []);
   return(
-  <Section id="languages" bgColor="#f6f6f6">
-    <div style={{...styles.container, flexDirection: isMobile ? "column" : "row"}}>
-      <div style={{...styles.columnOne, margin: isMobile ? "0px" : "50px"}}>
-          <motion.h2
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: false, amount: 0.3 }}
-            style={{...styles.title, fontSize: isMobile ? "25px" : "60px", textAlign: "center", marginTop: isMobile? "20px" : "35px"}}
-          >
-            Languages
-          </motion.h2>
-      </div>
-
-      <div style={{...styles.columnTwo, margin: isMobile ? "10px" : "70px"}}>
-        <motion.div
-          style={{...styles.sampleBox, width: isMobile ? "90vw" : "42vw"}}
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: false }}
+<Section id="languages" bgColor="#f6f6f6">
+  <div style={{...styles.container, flexDirection: isMobile ? "column" : "row", alignItems: isMobile ? "center" : "start"}}>
+    <div style={{...styles.columnOne, flex: isMobile ? 1/10 : 1 / 5, margin: isMobile ? "0px" : "50px"}}>
+        <motion.h2
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }}
+          style={{...styles.title, fontSize: isMobile ? "25px" : "60px", textAlign: "center", marginTop: isMobile ? "20px" : "35px"}}
         >
-          <p style={{...styles.languageTitle, fontSize: isMobile ? "16px" : "20px"}}>
-            English: C1 (IELTS Overall Band Score)
-          </p>
-          <LanguageProgress label="English: C1" target={90} isMobile={isMobile}/>
-          <p style={{...styles.languageTitle, fontSize: isMobile ? "16px" : "20px"}}>German: A2</p>
-          <LanguageProgress label="German: A2" target={30} isMobile={isMobile}/>
-          <p style={{...styles.languageTitle, fontSize: isMobile ? "16px" : "20px"}}>Persian: Native</p>
-          <LanguageProgress label="Persian: Native" target={100} isMobile={isMobile}/>
-        </motion.div>
-      </div>
+          Languages
+        </motion.h2>
     </div>
-  </Section>
+
+    <div style={{...styles.columnTwo, marginTop: isMobile ? "0px" : "50px"}}>
+      <motion.div
+        style={{...styles.sampleBox, width: isMobile ? "90vw" : "42vw", minHeight: isMobile ? "10vh" : "22vh"}}
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: false }}
+      >
+        <p style={{...styles.languageTitle, fontSize: isMobile ? "16px" : "17px"}}>English: C1 (IELTS Overall Band Score)</p>
+        <LanguageProgress label="English: C1" target={90} isMobile={isMobile}/>
+        <p style={{...styles.languageTitle, fontSize: isMobile ? "16px" : "17px"}}>German: A2</p>
+        <LanguageProgress label="German: A2" target={30} isMobile={isMobile}/>
+        <p style={{...styles.languageTitle, fontSize: isMobile ? "16px" : "17px"}}>Persian: Native</p>
+        <LanguageProgress label="Persian: Native" target={100} isMobile={isMobile}/>
+      </motion.div>
+    </div>
+  </div>
+</Section>
   );
 }
 export default Languages;
@@ -55,9 +53,8 @@ export default Languages;
 const styles = {
   container: {
     display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
     color: "#f6f6f6",
+    height: "57vh", // aligned with Education
     textAlign: "center",
   },
   columnOne: {
@@ -65,7 +62,7 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: "10px",
+    flex: 1 / 5,
   },
   columnTwo: {
     display: "flex",
@@ -74,13 +71,11 @@ const styles = {
     alignItems: "center",
     justifyContent: "start",
   },
-
   title: {
     fontSize: "60px",
     fontWeight: "bold",
     color: "#2e9fb1",
   },
-
   sampleBox: {
     backgroundColor: "white",
     borderRadius: "12px",
@@ -94,10 +89,11 @@ const styles = {
     flexDirection: "column",
     justifyContent: "center",
   },
-
   languageTitle: {
     fontWeight: "bold",
     color: "black",
     marginLeft: "10px",
   },
+
+
 };
