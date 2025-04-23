@@ -6,7 +6,7 @@ const WorkItem = ({ title, place, period, logo, link, techs, isMobile }) => {
 
   return (
     <motion.div
-      style={{...styles.sampleBox, width: isMobile ? "90vw" : "39vw", height: "27vh"}}
+      style={{...styles.sampleBox, width: isMobile ? "90vw" : "39vw", height: "25vh"}}
       initial={{ opacity: 0, scale: 0.7 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}

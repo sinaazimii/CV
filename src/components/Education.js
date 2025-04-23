@@ -33,12 +33,12 @@ const Education = () => {
               viewport={{ once: false, amount: 0.3 }}
               style={{
                 ...styles.title,
-                fontSize: isMobile ? "8vw" : "4vw",
+                fontSize: isMobile ? "7vw" : "3vw",
                 marginLeft: isMobile ? "0px" : "10%",
 
               }}
             >
-            <p>Education</p>
+            Education
             </motion.h2>
           </div>
 
@@ -77,12 +77,12 @@ const Education = () => {
               viewport={{ once: false, amount: 0.3 }}
               style={{
                 ...styles.title,
-                fontSize: isMobile ? "8vw" : "4vw",
+                fontSize: isMobile ? "7vw" : "3vw",
                 marginLeft: isMobile ? "0px" : "10%",
 
               }}
             >
-            <p>Languages</p>
+            Languages
             </motion.h2>
           </div>
 

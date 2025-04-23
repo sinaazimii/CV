@@ -49,6 +49,8 @@ const Hero = () => {
                 color: "#f6f6f6",
                 fontWeight: "bold",
                 whiteSpace: "nowrap",
+                textAlign: "center",
+                alignItems: "center",
               }}
             >
               Seyed Sina Azimi

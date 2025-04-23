@@ -64,7 +64,7 @@ const Skills = () => {
                 viewport={{ once: false, amount: 0.3 }}
                 style={{
                   ...styles.title,
-                  fontSize: "25px",
+                  fontSize: "7vw",
                   marginTop: "20px",
                   textAlign: "center",
                 }}
@@ -81,7 +81,7 @@ const Skills = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   viewport={{ once: false, amount: 0.3 }}
-                  style={{...styles.title, marginLeft: "-10vw"}}
+                  style={{...styles.title, marginLeft: "-10vw", fontSize: "3vw"}}
                 >
                   Skills
                 </motion.h2>
@@ -177,7 +177,6 @@ const styles = {
   },
 
   title: {
-    fontSize: "60px",
     fontWeight: "bold",
     color: "#2e9fb1",
   },

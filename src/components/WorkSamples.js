@@ -22,9 +22,10 @@ const WorkSamples = () => {
           flexDirection: isMobile ? "column" : "row",
           alignItems: isMobile ? "center" : "center",
           justifyContent: "center",
+          
         }}
       >
-        <div style={{ ...styles.columnOne, flex: isMobile ? 1 / 10 : 1 / 15 }}>
+        <div style={{ ...styles.columnOne, flex: isMobile ? 1 / 10 : 1 / 5 }}>
           <motion.h2
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -32,7 +33,7 @@ const WorkSamples = () => {
             viewport={{ once: false, amount: 0.3 }}
             style={{
               ...styles.title,
-              fontSize: isMobile ? "25px" : "60px",
+              fontSize: isMobile ? "7vw" : "3vw",
               textAlign: "center",
               marginTop: isMobile ? "20px" : "35px",
             }}
@@ -41,36 +42,11 @@ const WorkSamples = () => {
           </motion.h2>
         </div>
 
-        <div style={styles.columnTwo}>
-          {/* <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
-          style={{...styles.sampleBox, width: isMobile? "90vw":"45vw", height: isMobile? "22vh" :"45vh"}}
-        >
-          <img
-            src={`${process.env.PUBLIC_URL}/bnmodviz.png`}
-            alt="Sample 1"
-            style={{ width: "100%", height: "100%", borderRadius: "10px" }}
-          />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.3 }}
-          style={{...styles.sampleBox, width: isMobile? "90vw":"45vw", height: isMobile? "22vh" :"45vh"}}   
-        >
-          <img
-            src={`${process.env.PUBLIC_URL}/cpt.png`}
-            alt="Sample 1"
-            style={{ width: "100%", height: "100%", borderRadius: "10px" }}
-          />
-        </motion.div> */}
+        <div style={{...styles.columnTwo, flex: isMobile ? 9 / 10 : 14 / 15 }}>
           <div
             style={{
               display: "flex",
+              backgroundColor: "red",
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
@@ -80,7 +56,7 @@ const WorkSamples = () => {
               border: "2px solid #2e9fb1",
               backgroundColor: "#deecee",
               padding: "10px",
-              marginRight: isMobile? "0":"40px",
+              marginRight: isMobile? "0" : "50px",
             }}
           >
             <ProjectsCarousel />
@@ -108,20 +84,16 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    margin: "50px",
   },
   columnTwo: {
     display: "flex",
     flexDirection: "column",
-    flex: 4 / 5,
     alignItems: "center",
-    justifyContent: "start",
-    margin: "50px",
-    // backgroundColor: 'red',
+    justifyContent: "center",
+
   },
 
   title: {
-    fontSize: "60px",
     fontWeight: "bold",
     color: "#2e9fb1",
   },
@@ -131,7 +103,6 @@ const styles = {
     borderRadius: "12px",
     padding: "5px 10px",
     color: "#409ca9",
-    fontSize: "16px",
     marginBottom: "20px",
     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
   },
