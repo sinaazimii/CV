@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import LanguageProgress from "./LanguageProgress";
 
+const SCREEN_HEIGHT = window.innerHeight - 100; // Adjust this value as needed
+
 const Education = () => {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -21,10 +23,11 @@ const Education = () => {
         style={{
           ...styles.container,
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "start",
+          justifyContent: "start",
         }}
       >
-        <div style={{...styles.row, flexDirection: isMobile? "column" : "row", marginTop: isMobile ? "0" : "5vh"}}>
+        <div style={{...styles.rowOne, flexDirection: isMobile? "column" : "row"}}>
           <div style={styles.columnOne}>
             <motion.h2
               initial={{ opacity: 0, x: -100 }}
@@ -34,7 +37,8 @@ const Education = () => {
               style={{
                 ...styles.title,
                 fontSize: isMobile ? "7vw" : "3vw",
-                marginLeft: isMobile ? "0px" : "10%",
+                margin: isMobile  ? "0 0 30% 0" : "0 0 0 10%",
+                
 
               }}
             >
@@ -45,6 +49,7 @@ const Education = () => {
           <div
             style={{
               ...styles.columnTwo,
+              paddingTop: isMobile? "0vh" : "5vh",
             }}
           >
             <EducationItem
@@ -68,7 +73,7 @@ const Education = () => {
           </div>
         </div>
 
-        <div style={{...styles.row, flexDirection: isMobile? "column" : "row", marginTop: isMobile ? "0" : "5vh"}}>
+        <div style={{...styles.rowTwo, flexDirection: isMobile? "column" : "row"}}>
           <div style={styles.columnOne}>
             <motion.h2
               initial={{ opacity: 0, x: -100 }}
@@ -89,6 +94,7 @@ const Education = () => {
           <div
             style={{
               ...styles.columnTwo,
+              paddingTop: isMobile? "0vh" : "5vh",
             }}
           >
             <motion.div
@@ -145,7 +151,6 @@ const Education = () => {
           </div>
         </div>
 
-        <div style={{ ...styles.rowTwo }}></div>
       </div>
     </Section>
   );
@@ -157,8 +162,9 @@ const styles = {
   container: {
     display: "flex",
     color: "#f6f6f6",
-    height: "100vh",
     textAlign: "center",
+    overflow: "hidden",
+    height: "100%",
   },
   columnOne: {
     display: "flex",
@@ -166,7 +172,6 @@ const styles = {
     alignItems: "start",
     justifyContent: "center",
     flex: 1 / 5,
-    height: "100%",
   },
   columnTwo: {
     display: "flex",
@@ -174,10 +179,16 @@ const styles = {
     flex: 4 / 5,
     alignItems: "center",
     justifyContent: "start",
-    height: "100%",
+
   },
 
-  row: {
+  rowOne: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+  },
+  rowTwo: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",

@@ -18,7 +18,7 @@ function App() {
       return () => window.removeEventListener("resize", handleResize);
     }, []);
   return (
-    <main className="font-sans" style={{ backgroundColor: "#f6f6f6" }}>
+    <main className="font-sans" style={{ backgroundColor: "#f6f6f6", scrollSnapType: isMobile?  "none" : "y mandatory",}}>
       
       {!isMobile && (<ScrollNav />)}
       <div id="hero" className="section">
