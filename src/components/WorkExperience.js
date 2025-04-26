@@ -22,7 +22,7 @@ const WorkExperience = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.3 }}
-            style={{...styles.title, fontSize: isMobile ? "7vw" : "3vw", textAlign: "center", marginTop: isMobile? "20px" : "35px"}}
+            style={{...styles.title, fontSize: isMobile ? "7vw" : "3vw", textAlign: "center", marginTop: isMobile? "10%" : "20%"}}
           >
             Work Experience
           </motion.h2>

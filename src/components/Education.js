@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import LanguageProgress from "./LanguageProgress";
 
-const SCREEN_HEIGHT = window.innerHeight - 100; // Adjust this value as needed
-
 const Education = () => {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -37,9 +35,7 @@ const Education = () => {
               style={{
                 ...styles.title,
                 fontSize: isMobile ? "7vw" : "3vw",
-                margin: isMobile  ? "0 0 30% 0" : "0 0 0 10%",
-                
-
+                margin: isMobile  ? "0 0 20% 0" : "0 0 0 10%",
               }}
             >
             Education
@@ -83,7 +79,7 @@ const Education = () => {
               style={{
                 ...styles.title,
                 fontSize: isMobile ? "7vw" : "3vw",
-                marginLeft: isMobile ? "0px" : "10%",
+                margin: isMobile  ? "0 0 20% 0" : "0 0 0 10%",
 
               }}
             >

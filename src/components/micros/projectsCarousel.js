@@ -1,4 +1,3 @@
-import { title } from "framer-motion/client";
 import { useState, useEffect } from "react";
 import { useRef } from "react";
 
@@ -95,7 +94,13 @@ const ProjectsCarousel = () => {
   ];
   return (
     <div style={styles.container}>
-      <div style={styles.carouselWrapper} ref={carouselRef}>
+      <div style={styles.carouselWrapper} ref={carouselRef}
+      
+      initial={{ opacity: 0, scale: 0.7 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: false }}
+      >
         {items.map((item) => (
           <div
             style={{

@@ -43,10 +43,9 @@ const WorkSamples = () => {
         </div>
 
         <div style={{...styles.columnTwo, flex: isMobile ? 8.5 / 10 : 4 / 5, justifyContent: isMobile ? "start" : "center"}}>
-          <div
+          <motion.div
             style={{
               display: "flex",
-              backgroundColor: "red",
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
@@ -58,9 +57,13 @@ const WorkSamples = () => {
               padding: "10px",
               marginRight: isMobile? "0" : "50px",
             }}
+            initial={{ opacity: 0, scale: 0.7 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: false }}
           >
             <ProjectsCarousel />
-          </div>
+          </motion.div>
         </div>
       </div>
     </Section>
