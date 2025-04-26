@@ -16,7 +16,7 @@ const Education = () => {
   }, []);
 
   return (
-    <Section id="education" bgColor="#f6f6f6">
+    <Section>
       <div
         style={{
           ...styles.container,
@@ -105,7 +105,7 @@ const Education = () => {
               <p
                 style={{
                   ...styles.languageTitle,
-                  fontSize: isMobile ? "16px" : "17px",
+                  fontSize: isMobile ? "13px" : "17px",
                 }}
               >
                 English: C1 (IELTS Overall Band Score)
@@ -118,7 +118,7 @@ const Education = () => {
               <p
                 style={{
                   ...styles.languageTitle,
-                  fontSize: isMobile ? "16px" : "17px",
+                  fontSize: isMobile ? "13px" : "17px",
                 }}
               >
                 German: A2
@@ -131,7 +131,7 @@ const Education = () => {
               <p
                 style={{
                   ...styles.languageTitle,
-                  fontSize: isMobile ? "16px" : "17px",
+                  fontSize: isMobile ? "13px" : "17px",
                 }}
               >
                 Persian: Native
@@ -157,7 +157,7 @@ const styles = {
   container: {
     display: "flex",
     color: "#f6f6f6",
-    height: "57vh",
+    height: "100vh",
     textAlign: "center",
   },
   columnOne: {

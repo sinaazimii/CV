@@ -15,7 +15,7 @@ const WorkSamples = () => {
   }, []);
 
   return (
-    <Section id="work" bgColor="#f6f6f6" height={"100vh"}>
+    <Section>
       <div
         style={{
           ...styles.container,
@@ -25,7 +25,7 @@ const WorkSamples = () => {
           
         }}
       >
-        <div style={{ ...styles.columnOne, flex: isMobile ? 1 / 10 : 1 / 5 }}>
+        <div style={{ ...styles.columnOne, flex: isMobile ? 1.5 / 10 : 1 / 5}}>
           <motion.h2
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -42,7 +42,7 @@ const WorkSamples = () => {
           </motion.h2>
         </div>
 
-        <div style={{...styles.columnTwo, flex: isMobile ? 9 / 10 : 14 / 15 }}>
+        <div style={{...styles.columnTwo, flex: isMobile ? 8.5 / 10 : 4 / 5, justifyContent: isMobile ? "start" : "center"}}>
           <div
             style={{
               display: "flex",
@@ -78,6 +78,7 @@ const styles = {
     color: "#f6f6f6",
     height: "100vh",
     textAlign: "center",
+
   },
   columnOne: {
     display: "flex",
@@ -88,9 +89,6 @@ const styles = {
   columnTwo: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-
   },
 
   title: {

@@ -27,8 +27,7 @@ const Skills = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <Section id="skills" bgColor="#f6f6f6" height={"100vh"}>
-      <div>
+    <Section>
         <div
           style={{ ...styles.container, padding: isMobile ? "10px" : "20px" }}
         >
@@ -41,13 +40,14 @@ const Skills = () => {
               ...styles.rowOne,
               margin: isMobile ? "0" : "50px 0 100px 0",
               width: isMobile ? "100%" : "80%",
+              flex: isMobile ? 1 / 15 : 1 / 5,
             }}
           >
             <p
               style={{
                 ...styles.explain,
                 fontSize: isMobile ? "4vw" : "1.5vw",
-                margin: isMobile ? "4vw" : "2vw",
+                textAlign: isMobile ? "center" : "left",
               }}
             >
               I'm passionate about solving complex challenges and take pride in
@@ -73,7 +73,7 @@ const Skills = () => {
               </motion.h2>
             </div>
           )}
-          <div style={{ ...styles.rowTwo, width: isMobile ? "100%" : "80%" }}>
+          <div style={{ ...styles.rowTwo, width: isMobile ? "100%" : "80%", flex: isMobile ? 14 / 15 : 4 / 5, alignItems: isMobile ? "start" : "center"}}>
             {!isMobile && (
               <div style={styles.titleContainer}>
                 <motion.h2
@@ -144,7 +144,6 @@ const Skills = () => {
             )}
           </div>
         </div>
-      </div>
     </Section>
   );
 };
@@ -159,13 +158,13 @@ const styles = {
     alignItems: "center",
     color: "#f6f6f6",
     padding: "10px",
+    height: "100vh",
   },
 
   explain: {
-    textAlign: "start",
     fontSize: "31px",
     color: "white",
-    margin: "10px",
+    margin: "1.5vw",
   },
 
   titleContainer: {
@@ -193,20 +192,13 @@ const styles = {
   rowOne: {
     display: "flex",
     flexDirection: "column",
-    flex: 1,
-    alignItems: "flex-start",
-    justifyContent: "center",
-    height: "300px",
     backgroundColor: "#2e9fb1",
     borderRadius: "18px",
-    marginBottom: "100px",
   },
 
   rowTwo: {
     display: "flex",
     flexDirection: "row",
-    flex: 1,
-    alignItems: "center",
     justifyContent: "center",
   },
 
@@ -215,17 +207,6 @@ const styles = {
     flexDirection: "column",
     justifyContent: "space-between",
     gap: "2vw",
-  },
-
-  skillBox: {
-    height: "150px",
-    backgroundColor: "#deecee",
-    borderRadius: "12px",
-    padding: "5px 10px",
-    color: "#409ca9",
-    fontSize: "16px",
-    marginBottom: "20px",
-    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
   },
 
   skillBoxHeader: {

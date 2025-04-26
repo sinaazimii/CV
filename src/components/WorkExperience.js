@@ -14,7 +14,7 @@ const WorkExperience = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <Section id="work-experience" bgColor="#f6f6f6">
+    <Section>
       <div style={{...styles.container, flexDirection: isMobile ? "column" : "row", alignItems: isMobile?  'center' : "start"}}>
         <div style={{...styles.columnOne, margin: isMobile ? "0px" : "50px", flex: isMobile? 1/10 :1 / 5}}>
           <motion.h2

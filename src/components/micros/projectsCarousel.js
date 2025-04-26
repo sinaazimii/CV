@@ -69,8 +69,8 @@ const ProjectsCarousel = () => {
         "With User-Centric-Design implemented an intuitive tool for modelling Bayesian networks with various useful features and guides using React and Flask.",
       image: `${process.env.PUBLIC_URL}/bnmodviz.png`,
       size: isMobile
-        ? { width: "69vw", height: "20vh" }
-        : { width: "25vw", height: "30vh" },
+        ? { width: "95%", height: "16vh" }
+        : { width: "95%", height: "25vh" },
     },
     {
       id: 2,
@@ -79,8 +79,8 @@ const ProjectsCarousel = () => {
         "Face lifted an existing tool with a new design and implemented a new features using React and Django to fill Conditional Probability Table.",
       image: `${process.env.PUBLIC_URL}/cpt.png`,
       size: isMobile
-        ? { width: "69vw", height: "20vh" }
-        : { width: "25vw", height: "30vh" },
+        ? { width: "95%", height: "16vh" }
+        : { width: "95%", height: "25vh" },
     },
     {
       id: 3,
@@ -89,8 +89,8 @@ const ProjectsCarousel = () => {
         "An online bookstore application with a user-friendly interface, allowing users to browse, search, and purchase books.",
       image: `${process.env.PUBLIC_URL}/bookstore.jpg`,
       size: isMobile
-        ? { width: "40vw", height: "40vh" }
-        : { width: "15vw", height: "68vh" },
+        ? { width: "95%", height: "40vh" }
+        : { width: "95%", height: "60vh" },
     },
   ];
   return (
@@ -113,7 +113,6 @@ const ProjectsCarousel = () => {
                 style={{
                   width: item.size.width,
                   height: item.size.height,
-                  borderRadius: "10px",
                 }}
               />
             </div>

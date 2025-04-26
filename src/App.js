@@ -3,7 +3,6 @@ import Hero from "./components/Hero";
 import WorkSamples from "./components/WorkSamples";
 import Education from "./components/Education";
 import Skills from "./components/Skills";
-import Languages from "./components/Languages";
 import ScrollNav from "./components/ScrollNavigation";
 import WorkExperience from "./components/WorkExperience";
 import { useEffect, useState } from "react";
@@ -38,7 +37,6 @@ function App() {
       </div>
       <div id="education" className="section">
         <Education />
-        {/* <Languages /> */}
       </div>
     </main>
   );

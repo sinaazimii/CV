@@ -21,8 +21,7 @@ main {
 .section {
   scroll-snap-align: start; /* Snap sections to the top */
   height: 100vh; /* Each section takes up the full viewport height */
-  overflow: hidden;
-}
+  overflow: hidden;}
 
 html {
   scroll-behavior: smooth; /* Smooth scrolling for links and buttons */

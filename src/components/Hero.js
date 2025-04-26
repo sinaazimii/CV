@@ -21,7 +21,7 @@ const Hero = () => {
   const isInView = useInView(heroRef, { amount: 0.5 });
 
   return (
-    <Section id="hero" bgColor="#f6f6f6" height={"20vh"}>
+    <Section>
       <div
         ref={heroRef}
         className="text-center"
@@ -168,6 +168,7 @@ const styles = {
     color: "#f6f6f6",
     textAlign: "center",
     overflowX: "hidden",
+    height: "100vh",
   },
   headerContainer: {
     display: "flex",
