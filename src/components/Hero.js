@@ -143,7 +143,7 @@ const Hero = () => {
                 iconSize={"30px"}
               />
             </a>
-            <a href="mailto:your.email@example.com?subject=Let's%20Talk&body=Hi%20Sina,%0D%0AI'm%20interested%20in%20your%20work!">
+            <a href="mailto:sinaazimisd@gmail.com?subject=Let's%20Talk&body=Hi%20Sina,%0D%0AI'm%20interested%20in%20your%20work!">
               <SvgIcon
                 svgPath={`${process.env.PUBLIC_URL}/mail.svg`}
                 containerSize={"50px"}
