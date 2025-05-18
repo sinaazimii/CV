@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import SkillGroup from "./micros/skillGroup";
 import { useState, useEffect } from "react";
 
-const languages = ["JavaScript", "Python", "Java", "HTML", "CSS"];
+const languages = ["JavaScript", "TypeScript", "Python", "HTML", "CSS"];
 
 const tools = ["Git", "Docker", "Jira", "Figma"];
 
-const frameworks = ["React", "React Native", "Flutter", "Bootstrap"];
+const frameworks = ["React", "Next.Js", "React Native", "Flutter"];
 
 const softSkills = [
   "Focused",
