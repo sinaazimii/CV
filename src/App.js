@@ -24,9 +24,9 @@ function App() {
       <div id="hero" className="section">
         <Hero />
       </div>
-      <div id="skills" className="section">
+      {/* <div id="skills" className="section">
         <Skills />
-      </div>
+      </div> */}
 
       <div id="work-experience" className="section">
         <WorkExperience />

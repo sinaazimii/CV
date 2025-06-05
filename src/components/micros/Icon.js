@@ -1,15 +1,27 @@
+import { motion } from "framer-motion";
+
 const SvgIcon = ({ svgPath, iconSize, containerSize }) => {
   return (
-    <div
+    <motion.div
+      whileHover={{
+        scale: 1.15,
+        y: -5,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 15,
+      }}
       style={{
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "#eff0f4",
-        borderRadius: "50%",
+        borderRadius: "20%",
         padding: "10px",
         width: containerSize || "40px",
         height: containerSize || "40px",
+        cursor: "pointer",
       }}
     >
       <img
@@ -21,7 +33,7 @@ const SvgIcon = ({ svgPath, iconSize, containerSize }) => {
           margin: "10px",
         }}
       />
-    </div>
+    </motion.div>
   );
 };
 

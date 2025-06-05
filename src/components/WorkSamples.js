@@ -1,7 +1,8 @@
 import Section from "./SectionWrapper";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import ProjectsCarousel from "./micros/projectsCarousel";
+import WorkSample from "./micros/workSample";
+
 
 const WorkSamples = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -14,6 +15,40 @@ const WorkSamples = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+
+const items = [
+    {
+      id: 1,
+      title: "Bayesian Networks Modelling and Visualization Tool",
+      description:
+        "Designed and built an AI-powered Bayesian Network modeling tool using React and Flask, tailored for clinical usability and intuitive decision support",
+      image: `${process.env.PUBLIC_URL}/bnmodviz.png`,
+      size: isMobile
+        ? { width: "95%", height: "16vh" }
+        : { width: "95%", height: "25vh" },
+    },
+    {
+      id: 2,
+      title: "Probabilistic Modeling Tool",
+      description:
+        "Modernized a medical Bayesian Network Modeling tool using React and Django, significantly improving UX and accessibility for clinical users.",
+      image: `${process.env.PUBLIC_URL}/cpt.png`,
+      size: isMobile
+        ? { width: "95%", height: "16vh" }
+        : { width: "95%", height: "25vh" },
+    },
+    // {
+    //   id: 3,
+    //   title: "Bookstore",
+    //   description:
+    //     "An online bookstore application with a user-friendly interface, allowing users to browse, search, and purchase books.",
+    //   image: `${process.env.PUBLIC_URL}/bookstore.jpg`,
+    //   size: isMobile
+    //     ? { width: "95%", height: "40vh" }
+    //     : { width: "95%", height: "60vh" },
+    // },
+  ];
+
   return (
     <Section>
       <div
@@ -22,10 +57,9 @@ const WorkSamples = () => {
           flexDirection: isMobile ? "column" : "row",
           alignItems: isMobile ? "center" : "center",
           justifyContent: "center",
-          
         }}
       >
-        <div style={{ ...styles.columnOne, flex: isMobile ? 1.5 / 10 : 1 / 5}}>
+        <div style={{ ...styles.columnOne, flex: isMobile ? 1.5 / 10 : 4 / 5 }}>
           <motion.h2
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -41,29 +75,23 @@ const WorkSamples = () => {
             Work Samples
           </motion.h2>
         </div>
-
-        <div style={{...styles.columnTwo, flex: isMobile ? 8.5 / 10 : 4 / 5, justifyContent: isMobile ? "start" : "center"}}>
-          <motion.div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              width: isMobile? "90vw":"65vw",
-              height:  isMobile? "70vh":"88vh",
-              borderRadius: "10px",
-              border: "2px solid #2e9fb1",
-              backgroundColor: "#deecee",
-              padding: "10px",
-              marginRight: isMobile? "0" : "50px",
-            }}
-            initial={{ opacity: 0, scale: 0.7 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: false }}
-          >
-            <ProjectsCarousel />
-          </motion.div>
+        <div
+          style={{
+            ...styles.columnTwo,
+            flex: isMobile ? 8.5 / 10 : 4 / 5,
+            paddingTop: isMobile ? "0vh" : "5vh",
+          }}
+        >
+          {items.map((item) => (
+            <WorkSample
+              key={item.id}
+              title={item.title}
+              description={item.description}
+              image={item.image}
+              size={item.size}
+              isMobile={isMobile}
+            />
+          ))}
         </div>
       </div>
     </Section>
@@ -81,7 +109,6 @@ const styles = {
     color: "#f6f6f6",
     height: "100vh",
     textAlign: "center",
-
   },
   columnOne: {
     display: "flex",

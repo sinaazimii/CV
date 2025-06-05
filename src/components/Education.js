@@ -25,7 +25,12 @@ const Education = () => {
           justifyContent: "start",
         }}
       >
-        <div style={{...styles.rowOne, flexDirection: isMobile? "column" : "row"}}>
+        <div
+          style={{
+            ...styles.rowOne,
+            flexDirection: isMobile ? "column" : "row",
+          }}
+        >
           <div style={styles.columnOne}>
             <motion.h2
               initial={{ opacity: 0, x: -100 }}
@@ -35,17 +40,17 @@ const Education = () => {
               style={{
                 ...styles.title,
                 fontSize: isMobile ? "7vw" : "3vw",
-                margin: isMobile  ? "0 0 20% 0" : "0 0 0 10%",
+                margin: isMobile ? "0 0 20% 0" : "0 0 0 10%",
               }}
             >
-            Education
+              Education
             </motion.h2>
           </div>
 
           <div
             style={{
               ...styles.columnTwo,
-              paddingTop: isMobile? "0vh" : "5vh",
+              paddingTop: isMobile ? "0vh" : "5vh",
             }}
           >
             <EducationItem
@@ -69,7 +74,12 @@ const Education = () => {
           </div>
         </div>
 
-        <div style={{...styles.rowTwo, flexDirection: isMobile? "column" : "row"}}>
+        <div
+          style={{
+            ...styles.rowTwo,
+            flexDirection: isMobile ? "column" : "row",
+          }}
+        >
           <div style={styles.columnOne}>
             <motion.h2
               initial={{ opacity: 0, x: -100 }}
@@ -79,18 +89,17 @@ const Education = () => {
               style={{
                 ...styles.title,
                 fontSize: isMobile ? "7vw" : "3vw",
-                margin: isMobile  ? "0 0 20% 0" : "0 0 0 10%",
-
+                margin: isMobile ? "0 0 20% 0" : "0 0 0 10%",
               }}
             >
-            Languages
+              Languages
             </motion.h2>
           </div>
 
           <div
             style={{
               ...styles.columnTwo,
-              paddingTop: isMobile? "0vh" : "5vh",
+              paddingTop: isMobile ? "0vh" : "5vh",
             }}
           >
             <motion.div
@@ -103,6 +112,10 @@ const Education = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: false }}
+              whileHover={{
+                scale: 1.1,
+                y: 5,
+              }}
             >
               <p
                 style={{
@@ -146,7 +159,6 @@ const Education = () => {
             </motion.div>
           </div>
         </div>
-
       </div>
     </Section>
   );
@@ -175,7 +187,6 @@ const styles = {
     flex: 4 / 5,
     alignItems: "center",
     justifyContent: "start",
-
   },
 
   rowOne: {
