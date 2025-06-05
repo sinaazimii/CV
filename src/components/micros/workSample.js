@@ -5,7 +5,6 @@ const WorkSample = ({
   description,
   image,
   size,
-
   isMobile,
 }) => {
   return (
