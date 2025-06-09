@@ -1,23 +1,22 @@
-import Section from "./SectionWrapper";
-import { motion } from "framer-motion";
-import SkillGroup from "./micros/skillGroup";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import ScrollVelocity from "./micros/Hero/scrollVelocity";
 
-const languages = ["JavaScript", "TypeScript", "Python", "HTML", "CSS"];
-
-const tools = ["Git", "Docker", "Jira", "Figma"];
-
-const frameworks = ["React", "Next.Js", "React Native", "Flutter"];
-
-const softSkills = [
-  "Focused",
-  "Detail-oriented",
-  "Communication",
-  "Problem-solving",
+const skills = [
+  { name: "JavaScript", icon: `${process.env.PUBLIC_URL}/js.svg` },
+  { name: "React", icon: `${process.env.PUBLIC_URL}/react.svg` },
+  { name: "TypeScript", icon: `${process.env.PUBLIC_URL}/ts.svg` },
+  { name: "Next.js", icon: `${process.env.PUBLIC_URL}/next.svg` },
+  { name: "HTML", icon: `${process.env.PUBLIC_URL}/html.svg` },
+  { name: "CSS", icon: `${process.env.PUBLIC_URL}/css.svg` },
+  { name: "Git", icon: `${process.env.PUBLIC_URL}/git.svg` },
+  { name: "Docker", icon: `${process.env.PUBLIC_URL}/docker.svg` },
+  { name: "Ubuntu", icon: `${process.env.PUBLIC_URL}/ubuntu.svg` },
+  { name: "Jira", icon: `${process.env.PUBLIC_URL}/jira.svg` },
 ];
 
 const Skills = () => {
   const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768); // 768px is typical for mobile breakpoint
@@ -26,198 +25,54 @@ const Skills = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
   return (
-    <Section>
-        <div
-          style={{ ...styles.container, padding: isMobile ? "10px" : "20px" }}
-        >
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: false, amount: 0.3 }}
-            style={{
-              ...styles.rowOne,
-              margin: isMobile ? "0" : "50px 0 100px 0",
-              width: isMobile ? "100%" : "80%",
-              flex: isMobile ? 1 / 15 : 1 / 5,
-            }}
-          >
-            <p
+  <div
+    style={{
+      width: isMobile ? "100vw" : "60%",
+      height: isMobile ? "100px" : "100px",
+      left: isMobile ? "0" : "20%",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <ScrollVelocity
+      texts={[
+        <div style={{ display: "flex", gap: "2rem" }}>
+          {skills.map((skill, index) => (
+            <div
+              key={index}
               style={{
-                ...styles.explain,
-                fontSize: isMobile ? "4vw" : "1.5vw",
-                textAlign: isMobile ? "center" : "left",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                gap: "0.5rem",
+                color: "#2e9fb1",
+                fontWeight: "bold",
+                fontSize: "1.2rem",
+                minWidth: "80px",
               }}
             >
-              I'm passionate about solving complex challenges and take pride in
-              developing responsive, intuitive, and user-centered applications
-              that deliver real value.
-            </p>
-          </motion.div>
-          {isMobile && (
-            <div>
-              <motion.h2
-                initial={{ opacity: 0, x: -100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: false, amount: 0.3 }}
-                style={{
-                  ...styles.title,
-                  fontSize: "7vw",
-                  marginTop: "20px",
-                  textAlign: "center",
-                }}
-              >
-                Skills
-              </motion.h2>
+              <img
+                src={skill.icon}
+                alt={skill.name}
+                style={{ width: "40px", height: "40px" }}
+              />
+              {skill.name}
             </div>
-          )}
-          <div style={{ ...styles.rowTwo, width: isMobile ? "100%" : "80%", flex: isMobile ? 14 / 15 : 4 / 5, alignItems: isMobile ? "start" : "center"}}>
-            {!isMobile && (
-              <div style={styles.titleContainer}>
-                <motion.h2
-                  initial={{ opacity: 0, x: -100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  style={{...styles.title, marginLeft: "-10vw", fontSize: "3vw"}}
-                >
-                  Skills
-                </motion.h2>
-              </div>
-            )}
-            {!isMobile ? (
-              <div style={styles.skillContainer}>
-                <div style={styles.skillBoxContainer}>
-                  <SkillGroup
-                    title="Languages"
-                    icon={`${process.env.PUBLIC_URL}/code.svg`}
-                    skillList={languages}
-                  />
-                  <SkillGroup
-                    title="Tools"
-                    icon={`${process.env.PUBLIC_URL}/gear.svg`}
-                    skillList={tools}
-                  />
-                </div>
-                <div style={styles.skillBoxContainer}>
-                  <SkillGroup
-                    title="Frameworks"
-                    icon={`${process.env.PUBLIC_URL}/framework.svg`}
-                    skillList={frameworks}
-                  />
-                  <SkillGroup
-                    title="Soft Skills"
-                    icon={`${process.env.PUBLIC_URL}/people.svg`}
-                    skillList={softSkills}
-                  />
-                </div>
-              </div>
-            ) : (
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <SkillGroup
-                  title="Languages"
-                  icon={`${process.env.PUBLIC_URL}/code.svg`}
-                  skillList={languages}
-                  isMobile={isMobile}
-                />
-                <SkillGroup
-                  title="Tools"
-                  icon={`${process.env.PUBLIC_URL}/gear.svg`}
-                  skillList={tools}
-                  isMobile={isMobile}
-                />
-                <SkillGroup
-                  title="Frameworks"
-                  icon={`${process.env.PUBLIC_URL}/framework.svg`}
-                  skillList={frameworks}
-                  isMobile={isMobile}
-                />
-                <SkillGroup
-                  title="Soft Skills"
-                  icon={`${process.env.PUBLIC_URL}/people.svg`}
-                  skillList={softSkills}
-                  isMobile={isMobile}
-                />
-              </div>
-            )}
-          </div>
-        </div>
-    </Section>
+          ))}
+        </div>,
+      ]}
+      velocity={50}
+      className="custom-scroll-text"
+      scrollerStyle={{
+        display: "flex",
+        alignItems: "center",
+        gap: "3rem",
+      }}
+    />
+  </div>
   );
 };
 
 export default Skills;
-
-const styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    color: "#f6f6f6",
-    padding: "10px",
-    height: "100vh",
-  },
-
-  explain: {
-    fontSize: "31px",
-    color: "white",
-    margin: "1.5vw",
-  },
-
-  titleContainer: {
-    display: "flex",
-    flex: 1 / 4,
-    alignItems: "start",
-    justifyContent: "center",
-    // marginLeft: "20px",
-  },
-
-  title: {
-    fontWeight: "bold",
-    color: "#2e9fb1",
-  },
-
-  skillContainer: {
-    display: "flex",
-    flex: 3 / 4,
-    alignItems: "start",
-    justifyContent: "center",
-    flexDirection: "row",
-    gap: "50px",
-  },
-
-  rowOne: {
-    display: "flex",
-    flexDirection: "column",
-    backgroundColor: "#2e9fb1",
-    borderRadius: "18px",
-  },
-
-  rowTwo: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-  },
-
-  skillBoxContainer: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    gap: "2vw",
-  },
-
-  skillBoxHeader: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-  },
-
-  skillsList: {
-    display: "flex",
-    flexDirection: "row",
-    marginTop: "10px",
-  },
-};

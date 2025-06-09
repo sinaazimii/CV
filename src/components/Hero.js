@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Section from "./SectionWrapper";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import ScrollVelocity from "./micros/scrollVelocity";
-import "./micros/scrollVelocity.css";
-import ProfileCard from "./micros/profileCard";
+import ScrollVelocity from "./micros/Hero/scrollVelocity";
+import Section from "./SectionWrapper";
+import "./micros/Hero/scrollVelocity.css";
+import ProfileCard from "./micros/Hero/profileCard";
 import Introduction from "./micros/Hero/introduction";
 import MyName from "./micros/Hero/name";
+import Skills from "./Skills";
 
 const skills = [
   { name: "JavaScript", icon: `${process.env.PUBLIC_URL}/js.svg` },
@@ -94,50 +95,8 @@ const Hero = () => {
             />
           </div>
         </div>
-        <div
-          style={{
-            width: isMobile ? "100%" : "60%",
-            left: isMobile ? "0" : "20%",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <ScrollVelocity
-            texts={[
-              <div style={{ display: "flex", gap: "2rem" }}>
-                {skills.map((skill, index) => (
-                  <div
-                    key={index}
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                      gap: "0.5rem",
-                      color: "#2e9fb1",
-                      fontWeight: "bold",
-                      fontSize: "1.2rem",
-                      minWidth: "80px",
-                    }}
-                  >
-                    <img
-                      src={skill.icon}
-                      alt={skill.name}
-                      style={{ width: "40px", height: "40px" }}
-                    />
-                    {skill.name}
-                  </div>
-                ))}
-              </div>,
-            ]}
-            velocity={50}
-            className="custom-scroll-text"
-            scrollerStyle={{
-              display: "flex",
-              alignItems: "center",
-              gap: "3rem",
-            }}
-          />
-        </div>
+
+        {!isMobile && (<Skills />)}
         
       </div>
     </Section>

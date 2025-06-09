@@ -108,7 +108,7 @@ export default function ProfileCard({
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
           >
-            <h3 className="card-name">Seyed Sina Azimi</h3>
+            <h3 className="card-name">Sina Azimi</h3>
             <p className="card-title">Frontend Developer</p>
           </motion.div>
         )} */}

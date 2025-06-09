@@ -1,7 +1,7 @@
 import Section from "./SectionWrapper";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import WorkSample from "./micros/workSample";
+import WorkSample from "./micros/Work/workSample";
 
 
 const WorkSamples = () => {

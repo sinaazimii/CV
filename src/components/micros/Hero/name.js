@@ -3,7 +3,7 @@ import {motion} from "framer-motion";
 const  MyName = ({isMobile}) => {
   return <motion.div
     initial={{ width: 0 }}
-    animate={{ width: isMobile ? "90vw" : "60vw" }}
+    animate={{ width: isMobile ? "90vw" : "40vw" }}
     transition={{ duration: 1, ease: "easeInOut" }}
     style={{
       ...styles.headerContainer,
@@ -20,7 +20,7 @@ const  MyName = ({isMobile}) => {
         alignItems: "center",
       }}
     >
-      Seyed Sina Azimi
+      Sina Azimi
     </h2>
   </motion.div>;
 }

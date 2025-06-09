@@ -1,4 +1,4 @@
-import EducationItem from "./micros/educationItem";
+import EducationItem from "./micros/Education/educationItem";
 import Section from "./SectionWrapper";
 import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
@@ -123,7 +123,7 @@ const Education = () => {
                   fontSize: isMobile ? "13px" : "17px",
                 }}
               >
-                English: C1 (IELTS Overall Band Score)
+                English: C1 (IELTS Overall Band Score 7.5)
               </p>
               <LanguageProgress
                 label="English: C1"
