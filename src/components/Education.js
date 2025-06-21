@@ -3,6 +3,7 @@ import Section from "./SectionWrapper";
 import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import LanguageProgress from "./LanguageProgress";
+import theme from "./theme";
 
 const Education = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -51,13 +52,14 @@ const Education = () => {
             style={{
               ...styles.columnTwo,
               paddingTop: isMobile ? "0vh" : "5vh",
+              // marginBottom: '-20px',
             }}
           >
             <EducationItem
               title="Computer Science,  University of Freiburg, Germany"
               degree={"Master of Science"}
               logo={`${process.env.PUBLIC_URL}/ufr.svg`}
-              logoSize={{ width: "150px", height: "50px" }}
+              logoSize={{  width: "150px", height: "80px" }}
               period="2022 - 2025"
               link="https://www.uni-freiburg.de/"
               isMobile={isMobile}
@@ -65,11 +67,12 @@ const Education = () => {
             <EducationItem
               title="Computer Engineering, Shiraz University, Iran"
               degree={"Bachelor of Science"}
-              logo={`${process.env.PUBLIC_URL}/su.jpg`}
-              logoSize={{ width: "50px", height: "50px" }}
+              logo={`${process.env.PUBLIC_URL}/su.svg`}
+              logoSize={{ width: "40px", height: "50px" }}
               period="2016 - 2021"
               link="https://shirazu.ac.ir/en/home"
               isMobile={isMobile}
+              margin="0 0 10px 20px"
             />
           </div>
         </div>
@@ -169,7 +172,6 @@ export default Education;
 const styles = {
   container: {
     display: "flex",
-    color: "#f6f6f6",
     textAlign: "center",
     overflow: "hidden",
     height: "100%",
@@ -204,14 +206,13 @@ const styles = {
 
   title: {
     fontWeight: "bold",
-    color: "#2e9fb1",
+    color: theme.dark.color,
   },
 
   sampleBox: {
-    backgroundColor: "white",
+    backgroundColor: theme.dark.cardBackground,
     borderRadius: "12px",
     padding: "5px 10px",
-    color: "#409ca9",
     fontSize: "16px",
     marginBottom: "20px",
     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
@@ -222,7 +223,7 @@ const styles = {
   },
   languageTitle: {
     fontWeight: "bold",
-    color: "black",
+    color: theme.dark.color,
     marginLeft: "10px",
   },
 };

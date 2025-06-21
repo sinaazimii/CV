@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import theme from "../../theme";
 
 const EducationItem = ({
   title,
@@ -8,13 +9,14 @@ const EducationItem = ({
   logoSize,
   link,
   isMobile,
+  margin
 }) => {
   return (
     <motion.div
       style={{
         ...styles.sampleBox,
         width: isMobile ? "90vw" : "42vw",
-        minHeight: isMobile ? "10vh" : "22vh",
+        minHeight: isMobile ? "10vh" : "25vh",
       }}
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
@@ -33,6 +35,8 @@ const EducationItem = ({
             width: logoSize.width,
             height: logoSize.height,
             marginLeft: "10px",
+            scale: 2,
+            margin: margin,
           }}
         />
       </a>
@@ -59,10 +63,9 @@ export default EducationItem;
 
 const styles = {
   sampleBox: {
-    backgroundColor: "white",
+    backgroundColor: theme.dark.cardBackground,
     borderRadius: "12px",
     padding: "5px 10px",
-    color: "#409ca9",
     fontSize: "16px",
     marginBottom: "20px",
     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
@@ -74,13 +77,13 @@ const styles = {
 
   courseTitle: {
     fontWeight: "bold",
-    color: "black",
+    color: theme.dark.color,
     marginLeft: "10px",
     textAlign: "left",
   },
   date: {
     fontSize: "15px",
-    color: "black",
+    color: theme.dark.color,
     marginLeft: "10px",
   },
 };

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import theme from "./theme";
 
 const sections = [
   { id: "hero", label: "Introduction" },
@@ -46,8 +47,8 @@ const ScrollNav = () => {
           onClick={() => scrollTo(sec.id)}
           style={{
             ...styles.navItem,
-            backgroundColor: active === sec.id ? "#2e9fb1" : "#deecee",
-            color: active === sec.id ? "#fff" : "#2e9fb1",
+            backgroundColor: active === sec.id ? theme.dark.linkColor : theme.dark.cardBackground,
+            color: active === sec.id ? theme.dark.cardBackground : theme.dark.color,
           }}
         >
           {sec.label}
@@ -69,6 +70,7 @@ const styles = {
     flexDirection: "column",
     gap: "10px",
     zIndex: 1000,
+    
   },
   navItem: {
     padding: "10px 15px",

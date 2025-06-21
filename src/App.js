@@ -6,6 +6,7 @@ import Skills from "./components/Skills";
 import ScrollNav from "./components/ScrollNavigation";
 import WorkExperience from "./components/WorkExperience";
 import { useEffect, useState } from "react";
+import theme from "./components/theme"; 
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -21,7 +22,7 @@ function App() {
     <main
       className="font-sans"
       style={{
-        backgroundColor: "#f6f6f6",
+        backgroundColor: theme.dark.background,
         scrollSnapType: isMobile ? "none" : "y mandatory",
       }}
     >
@@ -31,8 +32,6 @@ function App() {
       </div>
 
       {isMobile && (<Skills />)}
-      
-
 
       <div id="work-experience" className="section">
         <WorkExperience />

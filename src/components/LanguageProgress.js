@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { ProgressBar } from "react-bootstrap";
+import theme from "./theme";
 
-const LanguageProgress = ({ label, target, color = "#2e9fb1", isMobile }) => {
+const LanguageProgress = ({ label, target, color = theme.dark.linkColor, isMobile }) => {
   const ref = useRef(null);
   const [progress, setProgress] = useState(0);
   const [visible, setVisible] = useState(false);
@@ -40,7 +41,7 @@ const LanguageProgress = ({ label, target, color = "#2e9fb1", isMobile }) => {
           width: isMobile? "40vw":"10vw",
           marginLeft: "10px",
           marginBottom: "10px",
-          backgroundColor: "#f0f0f0",
+          backgroundColor: theme.dark.background,
         }}
       >
         <div

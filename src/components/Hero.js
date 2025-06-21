@@ -1,26 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import ScrollVelocity from "./micros/Hero/scrollVelocity";
 import Section from "./SectionWrapper";
 import "./micros/Hero/scrollVelocity.css";
 import ProfileCard from "./micros/Hero/profileCard";
 import Introduction from "./micros/Hero/introduction";
 import MyName from "./micros/Hero/name";
 import Skills from "./Skills";
-
-const skills = [
-  { name: "JavaScript", icon: `${process.env.PUBLIC_URL}/js.svg` },
-  { name: "React", icon: `${process.env.PUBLIC_URL}/react.svg` },
-  { name: "TypeScript", icon: `${process.env.PUBLIC_URL}/ts.svg` },
-  { name: "Next.js", icon: `${process.env.PUBLIC_URL}/next.svg` },
-  { name: "HTML", icon: `${process.env.PUBLIC_URL}/html.svg` },
-  { name: "CSS", icon: `${process.env.PUBLIC_URL}/css.svg` },
-  { name: "Git", icon: `${process.env.PUBLIC_URL}/git.svg` },
-  { name: "Docker", icon: `${process.env.PUBLIC_URL}/docker.svg` },
-  { name: "Ubuntu", icon: `${process.env.PUBLIC_URL}/ubuntu.svg` },
-  { name: "Jira", icon: `${process.env.PUBLIC_URL}/jira.svg` },
-];
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -51,9 +37,9 @@ const Hero = () => {
           overflow: "visible",
         }}
       >
-        {isInView && (
+        {/* {isInView && (
           <MyName isMobile={isMobile} />
-        )}
+        )} */}
 
         <div
           style={{
@@ -110,8 +96,6 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#f6f6f6",
-    color: "#f6f6f6",
     textAlign: "center",
     overflowX: "hidden",
     position: "relative",

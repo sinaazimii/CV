@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import WorkItem from "./micros/Experience/workItem";
 import Section from "./SectionWrapper";
+import theme from "./theme";
 
 const WorkExperience = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -15,7 +16,7 @@ const WorkExperience = () => {
   }, []);
   return (
     <Section>
-      <div style={{...styles.container, flexDirection: isMobile ? "column" : "row", alignItems: isMobile?  'center' : "start", marginTop: isMobile ? "20px" : ""}}>
+      <div style={{...styles.container, flexDirection: isMobile ? "column" : "row", alignItems: isMobile?  'center' : "center", marginTop: isMobile ? "20px" : ""}}>
         <div style={{...styles.columnOne, margin: isMobile ? "0px" : "50px", flex: isMobile? 1/10 :1 / 5}}>
           <motion.h2
             initial={{ opacity: 0, x: -100 }}
@@ -30,23 +31,13 @@ const WorkExperience = () => {
 
         <div style={{...styles.columnTwo, margin: isMobile ? "0px" : "50px"}}>
           <WorkItem
-            title="Paid Master Thesis"
+            title="Frontend Developer"
             place={"Hahn-Schickard, Freiburg, Germany"}
-            period="Jan 2024 - May 2025"
+            period="Aug 2024 - Jun 2025"
             description="Worked on a project related to the analysis of complex systems using machine learning techniques."
             link="https://www.hahn-schickard.de/"
             logo={`${process.env.PUBLIC_URL}/hahn.svg`}
-            techs={" React, Flask, Git, Miro"}
-            isMobile={isMobile}
-          />
-          <WorkItem
-            title="Full Stack Developer (Work Student)"
-            place={"Hahn-Schickard, Freiburg, Germany"}
-            period="Aug 2024 - Dec 2024"
-            description="Worked on a project related to the analysis of complex systems using machine learning techniques."
-            link="https://www.hahn-schickard.de/"
-            logo={`${process.env.PUBLIC_URL}/hahn.svg`}
-            techs={" React, Django, Flutter, Git, Docker"}
+            techs={" React, Flask, Git, Docker, Miro"}
             isMobile={isMobile}
           />
           <WorkItem
@@ -55,7 +46,7 @@ const WorkExperience = () => {
             period="Oct 2022 - May 2024"
             description="Worked on a project related to the analysis of complex systems using machine learning techniques."
             link="https://www.psiori.com/"
-            logo={`${process.env.PUBLIC_URL}/psiori.png`}
+            logo={`${process.env.PUBLIC_URL}/psiori.svg`}
             techs={" Python, C++, Git, Docker, Jira, Linux, Bash"}
             isMobile={isMobile}
           />
@@ -72,7 +63,6 @@ const styles = {
     display: "flex",
     justifyContent: "start",
     alignItems: "start",
-    color: "#f6f6f6",
     height: "100vh",
     textAlign: "center",
   },
@@ -93,7 +83,7 @@ const styles = {
   title: {
     fontSize: "60px",
     fontWeight: "bold",
-    color: "#2e9fb1",
+    color: theme.dark.color,
     marginBottom: "15px",
   },
 };

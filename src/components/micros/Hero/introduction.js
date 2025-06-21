@@ -1,10 +1,11 @@
   import { Typewriter } from "react-simple-typewriter";
   import { motion } from "framer-motion";
   import SvgIcon from "../Icon";
+import theme from "../../theme";
 
   const Introduction = ({isMobile}) => {
     return <>
-      <motion.div
+      {/* <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, type: "spring", stiffness: 120 }}
@@ -14,13 +15,15 @@
         <span style={{ fontSize: "15px" }}>
           Available for Work
         </span>
-      </motion.div>
+      </motion.div> */}
+      <p style={styles.title}>Sina Azimi</p>
 
       <div style={styles.titleContainer}>
         <p
           style={{
             ...styles.title,
             fontSize: isMobile ? "1.5rem" : "3rem",
+            fontWeight: "lighter",
           }}
         >
           <Typewriter
@@ -106,11 +109,11 @@
       fontSize: "3rem",
       fontWeight: "bold",
       marginBottom: "20px",
-      color: "#2e9fb1",
+      color: theme.dark.color,
     },
     subtitle: {
       fontSize: "1.5rem",
-      color: "#2e9fb1",
+      color: theme.dark.color,
     },
     socialMediaContainer: {
       display: "flex",

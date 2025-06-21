@@ -16,7 +16,6 @@ const SvgIcon = ({ svgPath, iconSize, containerSize }) => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#eff0f4",
         borderRadius: "20%",
         padding: "10px",
         width: containerSize || "40px",

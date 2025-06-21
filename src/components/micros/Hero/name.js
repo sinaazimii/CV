@@ -1,4 +1,5 @@
 import {motion} from "framer-motion";
+import theme from "../../theme";
 
 const  MyName = ({isMobile}) => {
   return <motion.div
@@ -31,7 +32,7 @@ const styles = {
   headerContainer: {
     display: "flex",
     flexDirection: "row",
-    backgroundColor: "#2e9fb1",
+    backgroundColor: theme.dark.cardBackground,
     position: "absolute",
     top: "10px",
     borderRadius: "12px",

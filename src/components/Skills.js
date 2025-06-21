@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ScrollVelocity from "./micros/Hero/scrollVelocity";
+import theme from "./theme";
 
 const skills = [
   { name: "JavaScript", icon: `${process.env.PUBLIC_URL}/js.svg` },
@@ -47,7 +48,7 @@ const Skills = () => {
                 flexDirection: "row",
                 alignItems: "center",
                 gap: "0.5rem",
-                color: "#2e9fb1",
+                color: theme.dark.color,
                 fontWeight: "bold",
                 fontSize: "1.2rem",
                 minWidth: "80px",

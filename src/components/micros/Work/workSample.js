@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import theme from "../../theme";
 
 const WorkSample = ({
   title,
@@ -58,10 +59,9 @@ export default WorkSample;
 
 const styles = {
   sampleBox: {
-    backgroundColor: "white",
+    backgroundColor: theme.dark.cardBackground,
     borderRadius: "12px",
     padding: "20px",
-    color: "#409ca9",
     fontSize: "16px",
     marginBottom: "20px",
     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
@@ -73,13 +73,13 @@ const styles = {
 
   courseTitle: {
     fontWeight: "bold",
-    color: "black",
+    color: theme.dark.color,
     marginLeft: "10px",
     textAlign: "left",
   },
   date: {
     fontSize: "15px",
-    color: "black",
+    color: theme.dark.color,
     marginLeft: "10px",
   },
 };

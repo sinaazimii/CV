@@ -2,6 +2,7 @@ import Section from "./SectionWrapper";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import WorkSample from "./micros/Work/workSample";
+import theme from "./theme";
 
 
 const WorkSamples = () => {
@@ -59,7 +60,7 @@ const items = [
           justifyContent: "center",
         }}
       >
-        <div style={{ ...styles.columnOne, flex: isMobile ? 1.5 / 10 : 4 / 5 }}>
+        <div style={{ ...styles.columnOne, flex: isMobile ? 1.5 / 10 : 1 / 5 }}>
           <motion.h2
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -115,15 +116,18 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+    flex: 1 / 5,
   },
   columnTwo: {
     display: "flex",
     flexDirection: "column",
+    flex: 4 / 5,
+    alignItems: "center",
   },
 
   title: {
     fontWeight: "bold",
-    color: "#2e9fb1",
+    color: theme.dark.color,
   },
 
   sampleBox: {
