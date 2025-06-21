@@ -16,7 +16,7 @@ const EducationItem = ({
       style={{
         ...styles.sampleBox,
         width: isMobile ? "90vw" : "42vw",
-        minHeight: isMobile ? "10vh" : "25vh",
+        height: isMobile ? "26vh" : "25vh",
       }}
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
