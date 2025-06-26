@@ -9,14 +9,14 @@ const EducationItem = ({
   logoSize,
   link,
   isMobile,
-  margin
+  margin,
 }) => {
   return (
     <motion.div
       style={{
         ...styles.sampleBox,
         width: isMobile ? "90vw" : "42vw",
-        height: isMobile ? "26vh" : "25vh",
+        height: isMobile ? "28vh" : "25vh",
       }}
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
@@ -27,19 +27,26 @@ const EducationItem = ({
         y: 5,
       }}
     >
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        <img
-          src={logo}
-          alt={`${title} logo`}
-          style={{
-            width: logoSize.width,
-            height: logoSize.height,
-            marginLeft: "10px",
-            scale: 2,
-            margin: margin,
-          }}
-        />
-      </a>
+      <div
+        style={{
+          alignItems: "start",
+          justifyContent: "start",
+        }}
+      >
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <img
+            src={logo}
+            alt={`${title} logo`}
+            style={{
+              width: logoSize.width,
+              height: logoSize.height,
+              scale: 2,
+              margin: margin,
+            }}
+          />
+        </a>
+      </div>
+
       <p
         style={{
           ...styles.courseTitle,

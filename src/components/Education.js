@@ -59,7 +59,10 @@ const Education = () => {
               title="Computer Science,  University of Freiburg, Germany"
               degree={"Master of Science"}
               logo={`${process.env.PUBLIC_URL}/ufr.svg`}
-              logoSize={{  width: "150px", height: "80px" }}
+              logoSize={{
+                width: isMobile ? "45vw" : "7vw",
+                height: isMobile ? "10vh" : "7vh",
+               }}
               period="2022 - 2025"
               link="https://www.uni-freiburg.de/"
               isMobile={isMobile}
@@ -68,7 +71,10 @@ const Education = () => {
               title="Computer Engineering, Shiraz University, Iran"
               degree={"Bachelor of Science"}
               logo={`${process.env.PUBLIC_URL}/su.svg`}
-              logoSize={{ width: "40px", height: "50px" }}
+              logoSize={{
+                width: isMobile ? "20vw" : "5vw",
+                height: isMobile ? "5vh" : "5vh",
+              }}
               period="2016 - 2021"
               link="https://shirazu.ac.ir/en/home"
               isMobile={isMobile}

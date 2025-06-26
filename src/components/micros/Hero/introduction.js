@@ -1,10 +1,11 @@
-  import { Typewriter } from "react-simple-typewriter";
-  import { motion } from "framer-motion";
-  import SvgIcon from "../Icon";
+import { Typewriter } from "react-simple-typewriter";
+import { motion } from "framer-motion";
+import SvgIcon from "../Icon";
 import theme from "../../theme";
 
-  const Introduction = ({isMobile}) => {
-    return <>
+const Introduction = ({ isMobile }) => {
+  return (
+    <>
       {/* <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -29,7 +30,8 @@ import theme from "../../theme";
           <Typewriter
             words={["Hi, I'm a Frontend Developer"]}
             typeSpeed={90}
-            delaySpeed={2000} />
+            delaySpeed={2000}
+          />
         </p>
       </div>
       <p
@@ -60,7 +62,8 @@ import theme from "../../theme";
           <SvgIcon
             svgPath={`${process.env.PUBLIC_URL}/github.svg`}
             containerSize={"50px"}
-            iconSize={"30px"} />
+            iconSize={"30px"}
+          />
         </a>
         <a
           href="https://www.linkedin.com/in/sinaazimii/"
@@ -70,61 +73,61 @@ import theme from "../../theme";
           <SvgIcon
             svgPath={`${process.env.PUBLIC_URL}/linkedin.svg`}
             containerSize={"50px"}
-            iconSize={"30px"} />
+            iconSize={"30px"}
+          />
         </a>
         <a href="mailto:sinaazimisd@gmail.com?subject=Let's%20Talk&body=Hi%20Sina,%0D%0AI'm%20interested%20in%20your%20work!">
           <SvgIcon
             svgPath={`${process.env.PUBLIC_URL}/mail.svg`}
             containerSize={"50px"}
-            iconSize={"30px"} />
+            iconSize={"30px"}
+          />
         </a>
       </motion.div>
-    </>;
-  }
+    </>
+  );
+};
 
-  export default Introduction;
+export default Introduction;
 
-  const styles = {
-    titleContainer: {
-      display: "flex",
-      height: "100px",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      marginBottom: "20px",
-    },
-    capsule: {
-      backgroundColor: "#deecee",
-      borderRadius: "12px",
-      padding: "8px",
-      color: "#409ca9",
-      margin: "10px",
-      boxShadow: "0px 0px 10px 10px rgba(0, 0, 0, 0.1)",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
-      border: "1px solid #409ca9",
-    },
-    title: {
-      fontSize: "3rem",
-      fontWeight: "bold",
-      marginBottom: "20px",
-      color: theme.dark.color,
-    },
-    subtitle: {
-      fontSize: "1.5rem",
-      color: theme.dark.color,
-    },
-    socialMediaContainer: {
-      display: "flex",
-      flexDirection: "row",
-      height: "100px",
-      justifyContent: "center",
-      textAlign: "start",
-      gap: "1vw",
-      alignItems: "center",
-    },
-  };
-
-
-
+const styles = {
+  titleContainer: {
+    display: "flex",
+    height: "100px",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: "20px",
+  },
+  capsule: {
+    backgroundColor: "#deecee",
+    borderRadius: "12px",
+    padding: "8px",
+    color: "#409ca9",
+    margin: "10px",
+    boxShadow: "0px 0px 10px 10px rgba(0, 0, 0, 0.1)",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    border: "1px solid #409ca9",
+  },
+  title: {
+    fontSize: "3rem",
+    fontWeight: "bold",
+    marginBottom: "20px",
+    color: theme.dark.color,
+  },
+  subtitle: {
+    fontSize: "1.5rem",
+    color: theme.dark.color,
+  },
+  socialMediaContainer: {
+    display: "flex",
+    flexDirection: "row",
+    height: "100px",
+    justifyContent: "center",
+    textAlign: "start",
+    gap: "1vw",
+    alignItems: "center",
+  },
+};

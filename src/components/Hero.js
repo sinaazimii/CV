@@ -5,7 +5,6 @@ import Section from "./SectionWrapper";
 import "./micros/Hero/scrollVelocity.css";
 import ProfileCard from "./micros/Hero/profileCard";
 import Introduction from "./micros/Hero/introduction";
-import MyName from "./micros/Hero/name";
 import Skills from "./Skills";
 
 const Hero = () => {
@@ -23,7 +22,6 @@ const Hero = () => {
   const isInView = useInView(heroRef, { amount: 0.5 });
 
   return (
-    <Section>
       <div
         ref={heroRef}
         className="text-center"
@@ -37,9 +35,6 @@ const Hero = () => {
           overflow: "visible",
         }}
       >
-        {/* {isInView && (
-          <MyName isMobile={isMobile} />
-        )} */}
 
         <div
           style={{
@@ -67,7 +62,8 @@ const Hero = () => {
               ...styles.columnTwo,
             }}
           >
-            <ProfileCard
+            {!isMobile && 
+            (<ProfileCard
               imageSrc={`${process.env.PUBLIC_URL}/me.png`}
               containerHeight={isMobile ? "300px" : "400px"}
               containerWidth={ isMobile ? "200px" : "250px"}
@@ -78,14 +74,17 @@ const Hero = () => {
               showMobileWarning={false}
               showTooltip={true}
               displayOverlayContent={true}
-            />
+            />)
+            }
+            
+
+
           </div>
         </div>
 
         {!isMobile && (<Skills />)}
         
       </div>
-    </Section>
   );
 };
 
