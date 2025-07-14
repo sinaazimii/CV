@@ -31,7 +31,7 @@ const Skills = () => {
   <div
     style={{
       width: isMobile ? "100vw" : "60%",
-      height: isMobile ? "100px" : "100px",
+      height: "100px",
       left: isMobile ? "0" : "20%",
       alignItems: "center",
       justifyContent: "center",

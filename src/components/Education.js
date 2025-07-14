@@ -78,7 +78,7 @@ const Education = () => {
               period="2016 - 2021"
               link="https://shirazu.ac.ir/en/home"
               isMobile={isMobile}
-              margin="0 0 10px 20px"
+              margin="0 0 10px 0"
             />
           </div>
         </div>

@@ -43,7 +43,7 @@ const Hero = () => {
             justifyContent: "center",
             alignItems: "center",
             width: isMobile ? "100%" : "80%",
-            marginBottom: isMobile ? "0px" : "100px",
+            marginBottom: isMobile ? "0px" : "10px",
             marginTop: isMobile ? "0px" : "100px",
           }}
         >
@@ -75,9 +75,7 @@ const Hero = () => {
               showTooltip={true}
               displayOverlayContent={true}
             />)
-            }
-            
-
+            } 
 
           </div>
         </div>
